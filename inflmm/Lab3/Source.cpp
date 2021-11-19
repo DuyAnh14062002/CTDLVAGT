@@ -237,7 +237,63 @@ void heap_sort_count(int* arr, int n, long long int& count_cmp)
 		r = r - 1;
 	}
 }
+void radixSort(int a[], int n)
+{
+	int* b = new int[n];
+	int k = a[0], exp = 1;
 
+	for (int i = 0; i < n; i++)// Tim so lon nhat
+	{
+		if (a[i] > k)
+			k = a[i];
+	}
+	while (k / exp > 0)
+	{
+		int bucket[10] = { 0 };
+		for (int i = 0; i < n; i++) {
+			bucket[a[i] / exp % 10]++;
+		}
+		for (int i = 1; i < 10; i++)
+		{
+			bucket[i] += bucket[i - 1];
+		}
+		for (int i = n - 1; i >= 0; i--)
+		{
+			b[--bucket[a[i] / exp % 10]] = a[i];
+		}
+		for (int i = 0; i < n; i++) {
+			a[i] = b[i];
+		}
+		exp *= 10;
+	}
+}
+void shakerSort(int a[], int n)
+{
+	int Left = 0;
+	int Right = n - 1;
+	int k = 0;
+	while (Left < Right)
+	{
+		for (int i = Left; i < Right; i++)
+		{
+			if (a[i] > a[i + 1])
+			{
+				HoanVi(a[i], a[i + 1]);
+				k = i;
+			}
+		}
+		Right = k;
+		for (int j = Right; j > Left; j--)
+		{
+			if (a[j] < a[j - 1])
+			{
+				HoanVi(a[j], a[j - 1]);
+				k = j;
+			}
+		}
+		Left = k;
+	}
+}
 void copyArray(int* arrA, int*& arrB, int size)
 {
 	for (int i = 0; i < size; i++)
