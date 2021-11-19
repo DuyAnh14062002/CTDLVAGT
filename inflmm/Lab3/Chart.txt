@@ -1,0 +1,192 @@
+Sorted data | size: 10000
+239 miliseconds
+100020001 times
+
+Sorted data | size: 10000
+2 miliseconds
+500973 times
+
+Sorted data | size: 30000
+2167 miliseconds
+900060001 times
+
+Sorted data | size: 30000
+6 miliseconds
+1690912 times
+
+Sorted data | size: 50000
+6002 miliseconds
+2500100001 times
+
+Sorted data | size: 50000
+12 miliseconds
+2969093 times
+
+Sorted data | size: 100000
+23912 miliseconds
+10000200001 times
+
+Sorted data | size: 100000
+26 miliseconds
+6339731 times
+
+Sorted data | size: 300000
+215631 miliseconds
+90000600001 times
+
+Sorted data | size: 300000
+85 miliseconds
+20901602 times
+
+Sorted data | size: 500000
+600913 miliseconds
+250001000001 times
+
+Sorted data | size: 500000
+149 miliseconds
+36294155 times
+
+Nearly sorted data | size: 10000
+250 miliseconds
+100020001 times
+
+Nearly sorted data | size: 10000
+2 miliseconds
+519036 times
+
+Nearly sorted data | size: 30000
+2269 miliseconds
+900060001 times
+
+Nearly sorted data | size: 30000
+6 miliseconds
+1742717 times
+
+Nearly sorted data | size: 50000
+6318 miliseconds
+2500100001 times
+
+Nearly sorted data | size: 50000
+12 miliseconds
+3060914 times
+
+Nearly sorted data | size: 100000
+25228 miliseconds
+10000200001 times
+
+Nearly sorted data | size: 100000
+22 miliseconds
+6525399 times
+
+Nearly sorted data | size: 300000
+227430 miliseconds
+90000600001 times
+
+Nearly sorted data | size: 300000
+74 miliseconds
+21461203 times
+
+Nearly sorted data | size: 500000
+631270 miliseconds
+250001000001 times
+
+Nearly sorted data | size: 500000
+123 miliseconds
+37183363 times
+
+Reserve sorted data | size: 10000
+247 miliseconds
+100020001 times
+
+Reserve sorted data | size: 10000
+1 miliseconds
+483402 times
+
+Reserve sorted data | size: 30000
+2207 miliseconds
+900060001 times
+
+Reserve sorted data | size: 30000
+7 miliseconds
+1641469 times
+
+Reserve sorted data | size: 50000
+6159 miliseconds
+2500100001 times
+
+Reserve sorted data | size: 50000
+10 miliseconds
+2882199 times
+
+Reserve sorted data | size: 100000
+24618 miliseconds
+10000200001 times
+
+Reserve sorted data | size: 100000
+22 miliseconds
+6153394 times
+
+Reserve sorted data | size: 300000
+221635 miliseconds
+90000600001 times
+
+Reserve sorted data | size: 300000
+69 miliseconds
+20381638 times
+
+Reserve sorted data | size: 500000
+615234 miliseconds
+250001000001 times
+
+Reserve sorted data | size: 500000
+122 miliseconds
+35456561 times
+
+Randomized data | size: 10000
+243 miliseconds
+100020001 times
+
+Randomized data | size: 10000
+1 miliseconds
+519031 times
+
+Randomized data | size: 30000
+2175 miliseconds
+900060001 times
+
+Randomized data | size: 30000
+6 miliseconds
+1742793 times
+
+Randomized data | size: 50000
+6104 miliseconds
+2500100001 times
+
+Randomized data | size: 50000
+10 miliseconds
+3060975 times
+
+Randomized data | size: 100000
+24654 miliseconds
+10000200001 times
+
+Randomized data | size: 100000
+22 miliseconds
+6525377 times
+
+Randomized data | size: 300000
+225089 miliseconds
+90000600001 times
+
+Randomized data | size: 300000
+71 miliseconds
+21461337 times
+
+Randomized data | size: 500000
+628041 miliseconds
+250001000001 times
+
+Randomized data | size: 500000
+126 miliseconds
+37183370 times
+
