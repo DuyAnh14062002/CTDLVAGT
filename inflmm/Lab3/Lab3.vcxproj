@@ -139,7 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Comparison.cpp" />
+    <ClCompile Include="GenerateData.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RunTime.cpp" />
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Comparisons.h" />
+    <ClInclude Include="GenerateData.h" />
+    <ClInclude Include="Runtime.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
