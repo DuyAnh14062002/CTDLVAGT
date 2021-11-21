@@ -82,7 +82,62 @@ void mergeSort_com(int a[], int left, int right, unsigned long long& count_com)
         merge_com(a, left, mid, right, count_com);
     }
 }
-
+void radixSort_com(int a[], int n, unsigned long long& count_com)
+{
+    int* b = new int[n];
+    int k = a[0], exp = 1;
+    for (int i = 0;++count_com&& i < n; i++)// Tim so lon nhat
+    {
+        if (++count_com && a[i] > k)
+            k = a[i];
+    }
+    while (++count_com && k / exp > 0)
+    {
+        int bucket[10] = { 0 };
+        for (int i = 0; ++count_com && i < n; i++) {
+            bucket[a[i] / exp % 10]++;
+        }
+        for (int i = 1; ++count_com && i < 10; i++)
+        {
+            bucket[i] += bucket[i - 1];
+        }
+        for (int i = n - 1; ++count_com && i >= 0; i--)
+        {
+            b[--bucket[a[i] / exp % 10]] = a[i];
+        }
+        for (int i = 0; ++count_com && i < n; i++) {
+            a[i] = b[i];
+        }
+        exp *= 10;
+    }
+}
+void shakerSort_com(int a[], int n, unsigned long long& count_com)
+{
+    int Left = 0;
+    int Right = n - 1;
+    int k = 0;
+    while (++count_com && Left < Right)
+    {
+        for (int i = Left; ++count_com && i < Right; i++)
+        {
+            if (++count_com && a[i] > a[i + 1])
+            {
+                HoanVi(a[i], a[i + 1]);
+                k = i;
+            }
+        }
+        Right = k;
+        for (int j = Right; ++count_com && j > Left; j--)
+        {
+            if (++count_com && a[j] < a[j - 1])
+            {
+                HoanVi(a[j], a[j - 1]);
+                k = j;
+            }
+        }
+        Left = k;
+    }
+}
 void MenuRunTime(int a[], int n, int sort, unsigned long long& count_com)
 {
     count_com = 0;
