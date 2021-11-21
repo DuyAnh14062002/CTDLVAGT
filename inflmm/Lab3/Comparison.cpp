@@ -82,6 +82,57 @@ void mergeSort_com(int a[], int left, int right, unsigned long long& count_com)
         merge_com(a, left, mid, right, count_com);
     }
 }
+void swap(int& x, int& y)
+{
+    int temp = x;
+    x = y;
+    y = temp;
+}
+void bubbleSort_count(int arr[], int n, unsigned long long& count_cmp)
+{
+    count_cmp = 0;
+    int i, j;
+    bool haveSwap = false;
+    for (i = 0;++count_cmp && i < n - 1; i++) {
+        //  the last element have sorted
+        haveSwap = false;
+        for (j = 0; ++count_cmp && j < n - i - 1; j++) {
+            if (++count_cmp && arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                haveSwap = true; //Check if this iteration has swap
+            }
+        }
+        //If no swap is performed = > sorted array.No need to repeat
+        if (haveSwap == false) {
+            break;
+        }
+    }
+}
+int partition_count(int arr[], int low, int high, unsigned long long& count_cmp)
+{
+    int pivot = arr[high];    // pivot
+    int left = low;
+    int right = high - 1;
+    while (true) {
+        while (++count_cmp && left <= right && ++count_cmp && arr[left] < pivot) left++;
+        while (++count_cmp && right >= left && ++count_cmp && arr[right] > pivot) right--;
+        if (++count_cmp && left >= right) break;
+        swap(arr[left], arr[right]);
+        left++;
+        right--;
+    }
+    swap(arr[left], arr[high]);
+    return left;
+}
+void quickSort_count(int arr[], int low, int high, unsigned long long& count_cmp)
+{
+    if (++count_cmp && low < high)
+    {
+        int pi = partition_count(arr, low, high, count_cmp);
+        quickSort_count(arr, low, pi - 1, count_cmp);
+        quickSort_count(arr, pi + 1, high, count_cmp);
+    }
+}
 void radixSort_com(int a[], int n, unsigned long long& count_com)
 {
     int* b = new int[n];
