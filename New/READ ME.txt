@@ -1,0 +1,22 @@
+*Đây là file bao gồm các cập nhật và các lưu ý 
+
+-22/11/2021 (Phạm Phước Bình)
++Từ giờ sẽ chuyển sang dùng project này. Mục đích để có chung
+format và không bị xung đột khi thêm những thứ mới vào
++Khi có thay đổi nào thì hãy ghi rõ vào đây những thay đổi và
+thời gian thay đổi
++Trong đây bao gồm các file:
+*Header.h chứa các thư viện và gọi hàm. Khi gọi hàm thì phân
+ra hàm đó từ file nào (vd: // Source.cpp )
+*GenerateData.cpp, là file được cung cấp, được dùng để tạo data
+*SortingAlgorithm.cpp là file gồm các hàm sắp xếp
+*CountFunction.cpp là file gồm các hàm sắp xếp nhưng có thêm
+biến đếm count_cmp dùng cho việc đếm so lần so sánh.
+Cần phân biệt CountFunction và sortingAlgorithm
+*Source.cpp là các hàm phục vụ cho mục đích khác như chạy tự động
+các hàm sorting và đếm thời gian, count_cmp...
+*Main.cpp là hàm chạy chương trình chính
+
++Có thể thêm file nào tuỳ ý miễn dựa vào các file gốc này, nhớ
+ghi rõ các thay đổi
+

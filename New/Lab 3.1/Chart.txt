@@ -1,0 +1,273 @@
+Sorted data | size: 10000
+SELECTION SORT
+273 miliseconds
+100020001 times
+
+HEAP SORT
+2 miliseconds
+519036 times
+
+BUBBLE SORT
+0 miliseconds
+20001 times
+
+INSERTION SORT
+0 miliseconds
+19999 times
+
+RADIX SORT
+1 miliseconds
+140058 times
+
+SHAKER SORT
+0 miliseconds
+20002 times
+
+MERGE SORT
+5 miliseconds
+406234 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Sorted data | size: 30000
+SELECTION SORT
+2489 miliseconds
+900060001 times
+
+HEAP SORT
+7 miliseconds
+1742717 times
+
+BUBBLE SORT
+0 miliseconds
+60001 times
+
+INSERTION SORT
+0 miliseconds
+59999 times
+
+RADIX SORT
+6 miliseconds
+510072 times
+
+SHAKER SORT
+0 miliseconds
+60002 times
+
+MERGE SORT
+15 miliseconds
+1332186 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Nearly sorted data | size: 10000
+SELECTION SORT
+264 miliseconds
+100020001 times
+
+HEAP SORT
+1 miliseconds
+519061 times
+
+BUBBLE SORT
+240 miliseconds
+88676577 times
+
+INSERTION SORT
+0 miliseconds
+88073 times
+
+RADIX SORT
+1 miliseconds
+140058 times
+
+SHAKER SORT
+1 miliseconds
+169529 times
+
+MERGE SORT
+6 miliseconds
+420065 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Nearly sorted data | size: 30000
+SELECTION SORT
+2337 miliseconds
+900060001 times
+
+HEAP SORT
+6 miliseconds
+1742775 times
+
+BUBBLE SORT
+2326 miliseconds
+873907005 times
+
+INSERTION SORT
+0 miliseconds
+288625 times
+
+RADIX SORT
+6 miliseconds
+510072 times
+
+SHAKER SORT
+3 miliseconds
+574195 times
+
+MERGE SORT
+17 miliseconds
+1382066 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Reserve sorted data | size: 10000
+SELECTION SORT
+262 miliseconds
+100020001 times
+
+HEAP SORT
+1 miliseconds
+483402 times
+
+BUBBLE SORT
+2277 miliseconds
+100019998 times
+
+INSERTION SORT
+159 miliseconds
+50014999 times
+
+RADIX SORT
+1 miliseconds
+140058 times
+
+SHAKER SORT
+838 miliseconds
+100005001 times
+
+MERGE SORT
+4 miliseconds
+401834 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Reserve sorted data | size: 30000
+SELECTION SORT
+2377 miliseconds
+900060001 times
+
+HEAP SORT
+8 miliseconds
+1641469 times
+
+BUBBLE SORT
+20388 miliseconds
+900059998 times
+
+INSERTION SORT
+1438 miliseconds
+450044999 times
+
+RADIX SORT
+6 miliseconds
+510072 times
+
+SHAKER SORT
+7521 miliseconds
+900015001 times
+
+MERGE SORT
+17 miliseconds
+1323962 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Randomized data | size: 10000
+SELECTION SORT
+254 miliseconds
+100020001 times
+
+HEAP SORT
+2 miliseconds
+501098 times
+
+BUBBLE SORT
+1379 miliseconds
+100014072 times
+
+INSERTION SORT
+81 miliseconds
+24985365 times
+
+RADIX SORT
+1 miliseconds
+140058 times
+
+SHAKER SORT
+510 miliseconds
+66629276 times
+
+MERGE SORT
+6 miliseconds
+457623 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Randomized data | size: 30000
+SELECTION SORT
+2277 miliseconds
+900060001 times
+
+HEAP SORT
+6 miliseconds
+1691305 times
+
+BUBBLE SORT
+12470 miliseconds
+900028317 times
+
+INSERTION SORT
+729 miliseconds
+226035001 times
+
+RADIX SORT
+6 miliseconds
+510072 times
+
+SHAKER SORT
+4737 miliseconds
+602370678 times
+
+MERGE SORT
+19 miliseconds
+1513009 times
+
+QUICK SORT
+0 miliseconds
+0 times
+
+-------------------
+Total time taken: 65 seconds

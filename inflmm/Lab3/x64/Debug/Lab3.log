@@ -1,0 +1,29 @@
+﻿  Comparison.cpp
+  GenerateData.cpp
+  main.cpp
+  RunTime.cpp
+  Source.cpp
+  Generating Code...
+RunTime.obj : error LNK2005: "void __cdecl swap(int &,int &)" (?swap@@YAXAEAH0@Z) already defined in Comparison.obj
+Source.obj : error LNK2005: "void __cdecl GenerateData(int * const,int,int)" (?GenerateData@@YAXQEAHHH@Z) already defined in GenerateData.obj
+Source.obj : error LNK2005: "void __cdecl GenerateNearlySortedData(int * const,int)" (?GenerateNearlySortedData@@YAXQEAHH@Z) already defined in GenerateData.obj
+Source.obj : error LNK2005: "void __cdecl GenerateRandomData(int * const,int)" (?GenerateRandomData@@YAXQEAHH@Z) already defined in GenerateData.obj
+Source.obj : error LNK2005: "void __cdecl GenerateReverseData(int * const,int)" (?GenerateReverseData@@YAXQEAHH@Z) already defined in GenerateData.obj
+Source.obj : error LNK2005: "void __cdecl GenerateSortedData(int * const,int)" (?GenerateSortedData@@YAXQEAHH@Z) already defined in GenerateData.obj
+Source.obj : error LNK2005: "void __cdecl bubbleSort(int * const,int)" (?bubbleSort@@YAXQEAHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "void __cdecl bubbleSort_count(int * const,int,unsigned __int64 &)" (?bubbleSort_count@@YAXQEAHHAEA_K@Z) already defined in Comparison.obj
+Source.obj : error LNK2005: "void __cdecl copyArray(int *,int * &,int)" (?copyArray@@YAXPEAHAEAPEAHH@Z) already defined in GenerateData.obj
+Source.obj : error LNK2005: "void __cdecl heapConstruct(int *,int)" (?heapConstruct@@YAXPEAHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "void __cdecl heapRebuild(int,int *,int)" (?heapRebuild@@YAXHPEAHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "void __cdecl heap_sort(int *,int)" (?heap_sort@@YAXPEAHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "int __cdecl partition(int * const,int,int)" (?partition@@YAHQEAHHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "int __cdecl partition_count(int * const,int,int,unsigned __int64 &)" (?partition_count@@YAHQEAHHHAEA_K@Z) already defined in Comparison.obj
+Source.obj : error LNK2005: "void __cdecl quickSort(int * const,int,int)" (?quickSort@@YAXQEAHHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "void __cdecl quickSort_count(int * const,int,int,unsigned __int64 &)" (?quickSort_count@@YAXQEAHHHAEA_K@Z) already defined in Comparison.obj
+Source.obj : error LNK2005: "void __cdecl radixSort(int * const,int)" (?radixSort@@YAXQEAHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "void __cdecl radixSort_com(int * const,int,unsigned __int64 &)" (?radixSort_com@@YAXQEAHHAEA_K@Z) already defined in Comparison.obj
+Source.obj : error LNK2005: "void __cdecl selection_sort(int *,int)" (?selection_sort@@YAXPEAHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "void __cdecl shakerSort(int * const,int)" (?shakerSort@@YAXQEAHH@Z) already defined in RunTime.obj
+Source.obj : error LNK2005: "void __cdecl shakerSort_com(int * const,int,unsigned __int64 &)" (?shakerSort_com@@YAXQEAHHAEA_K@Z) already defined in Comparison.obj
+Source.obj : error LNK2005: "void __cdecl swap(int &,int &)" (?swap@@YAXAEAH0@Z) already defined in Comparison.obj
+D:\05. Github\CTDLVAGT\inflmm\x64\Debug\Lab3.exe : fatal error LNK1169: one or more multiply defined symbols found

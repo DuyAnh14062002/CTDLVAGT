@@ -512,11 +512,11 @@ void experiments()
 	int size[6] = { 10000,  30000,  50000,  100000,  300000,  500000 };
 	long long int count_cmp = 0;
 	string name[4] = {"Sorted data", "Nearly sorted data", "Reserve sorted data", "Randomized data"};
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		// 1: sorted data	2: nearly sorted data	3: reserve sorted data	4: randomized data
 		cout << "----------- Type: " << name[i] << "-----------" << endl;
-		for (int j = 0; j < 6; j++)
+		for (int j = 0; j < 3; j++)
 		{
 			cout << "-----------" <<  "Size: " << size[j] << endl;
 			int* arrA = new int[size[j]];
