@@ -189,24 +189,33 @@ void shakerSort_com(int a[], int n, unsigned long long& count_com)
         Left = k;
     }
 }
-void MenuRunTime(int a[], int n, int sort, unsigned long long& count_com)
+void MenuComparison(int a[], int n, int sort, unsigned long long& count_com)
 {
     count_com = 0;
     switch (sort)
     {
-    case 2:	//Selection sort
+    case 0:	//Selection sort
         cout << "Selection Sort: ";
         break;
     case 1:	// Insertion Sort
         cout << "Insertion Sort: ";
         insertionSort_Com(a, n, count_com);
         break;
-    case 0:	// Megre sort
+    case 2:	// Megre sort
         cout << "Merge Sort: ";
         mergeSort_com(a, 0, n - 1, count_com);
         break;
     case 3:	// Heap Sort
         cout << "Heap Sort: ";
+        break;
+    case 4:
+        cout << "Bubble Sort: ";
+        break;
+    case 5:
+        cout << "Quick Sort: ";
+        break;
+    case 6:
+        cout << "Radix Sort: ";
         break;
     default:
         printf("Error: unknown data type!\n");

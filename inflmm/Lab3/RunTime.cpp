@@ -266,21 +266,28 @@ void MenuRunTime(int a[], int n, int sort)
 {
     switch (sort)
     {
-    case 0:	// Insertion Sort
+    case 0:	//Selection sort
+        cout << "Selection Sort: ";
+        break;
+    case 1:	// Insertion Sort
         cout << "Insertion Sort: ";
         insertionSort(a, n);
         break;
-    case 1:	// Megre sort
+    case 2:	// Megre sort
         cout << "Merge Sort: ";
         mergeSort(a, 0, n - 1);
         break;
-    case 2: 
-        cout << "Selection Sort: ";
-        selection_sort(a, n);
-        break;
-    case 3: 
+    case 3:	// Heap Sort
         cout << "Heap Sort: ";
-        heap_sort(a, n);
+        break;
+    case 4:
+        cout << "Bubble Sort: ";
+        break;
+    case 5:
+        cout << "Quick Sort: ";
+        break;
+    case 6:
+        cout << "Radix Sort: ";
         break;
     default:
         printf("Error: unknown data type!\n");

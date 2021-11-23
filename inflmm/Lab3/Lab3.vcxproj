@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommandLine.cpp" />
     <ClCompile Include="Comparison.cpp" />
     <ClCompile Include="GenerateData.cpp" />
     <ClCompile Include="main.cpp" />
