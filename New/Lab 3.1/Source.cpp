@@ -1,8 +1,15 @@
-#include "Header.h"
+﻿#include "Header.h"
+
+void swap1(int& a, int& b)
+{
+	int temp = a;
+	a = b;
+	b = temp;
+}
 
 // pick_sort(): 0. Selection sort  1. Heap sort  2. Bubble sort  3. Insertion sort
 //  4. Radix sort  5. Shakser sort 6. Merge sort  7. Quick sort
-void pick_sort(int* arr, int size, long long int& count_cmp, int index)
+void pick_sort_count(int* arr, int size, long long int& count_cmp, int index)
 {
 	switch (index)
 	{
@@ -43,7 +50,57 @@ void pick_sort(int* arr, int size, long long int& count_cmp, int index)
 	}
 	case(7):
 	{
-		//quick_sort_count(arr, , , count_cmp);
+		quick_sort_count(arr, 0, size - 1, count_cmp);
+		break;
+	}
+	default:
+	{
+		cout << "Index is out of range!" << endl;
+	}
+	}
+}
+void pickSort(int* arr, int size, int index)
+{
+	switch (index)
+	{
+	case(0):
+	{
+		selectionSort(arr, size);
+		break;
+	}
+	case(1):
+	{
+		heapSort(arr, size);
+		break;
+	}
+	case(2):
+	{
+		bubbleSort(arr, size);
+		break;
+	}
+	case(3):
+	{
+		insertionSort(arr, size);
+		break;
+	}
+	case(4):
+	{
+		radixSort(arr, size);
+		break;
+	}
+	case(5):
+	{
+		shakerSort(arr, size);
+		break;
+	}
+	case(6):
+	{
+		mergeSort(arr, 0, size - 1);
+		break;
+	}
+	case(7):
+	{
+		quickSort(arr, 0, size - 1);
 		break;
 	}
 	default:
@@ -138,16 +195,23 @@ void run_BubbleSort(int* arr, int size)
 //
 void runSort(int arr[], int size, int index)
 {
-	long long int count_cmp = 0;
+	// do chạy sort 2 lần nên cần cope arr sang mảng khác
+	int* arrB = new int[size];
+	copyArray(arr, arrB, size);
+	// Đếm thời gian sort
 	auto start = high_resolution_clock::now();
-	pick_sort(arr, size, count_cmp, index);
+	pickSort(arrB, size, index); 
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<milliseconds>(stop - start);
-
+	// Đếm số lần so sánh, tách riêng ra vì đếm so sánh gây ảnh hưởng lớn tới thời gian sort
+	copyArray(arr, arrB, size);
+	long long int count_cmp = 0;
+	pick_sort_count(arrB, size, count_cmp, index);
+	delete[] arrB;
 
 	string sortName[8] = {"SELECTION SORT", "HEAP SORT", "BUBBLE SORT", "INSERTION SORT", "RADIX SORT", "SHAKER SORT", "MERGE SORT", "QUICK SORT"};
 	cout << sortName[index] << endl;
-	cout << "Time taken: " << duration.count() << " miliseconds" << endl;
+	cout << "Time taken: " << duration.count() << " miliseconds (without count comparisons)" << endl;
 	cout << "Number of comparisons: " << count_cmp << endl << endl;
 	fstream file;
 	file.open("Chart.txt", ios::app);
@@ -159,7 +223,7 @@ void runSort(int arr[], int size, int index)
 	{
 		file.seekp(file.eof());
 		file << sortName[index] << endl;
-		file << duration.count() << " miliseconds" << endl;
+		file << duration.count() << " miliseconds (without count comparisons)" << endl;
 		file << count_cmp << " times" << endl << endl;
 	}
 }
@@ -177,11 +241,10 @@ void experiments()
 		// 0: sorted data	1: nearly sorted data	2: reserve sorted data	3: randomized data
 		cout << "----------- Type: " << name[i] << "-----------" << endl;
 		
-		for (int j = 0; j < 2; j++)
+		for (int j = 0; j < 3; j++)
 		{
 			cout << "-----------" << "Size: " << size[j] << endl;
 			int* arrA = new int[size[j]];
-			int* arrB = new int[size[j]];
 			index = 0;
 
 			GenerateData(arrA, size[j], i);
@@ -192,10 +255,10 @@ void experiments()
 			// * Quick sort is currently disable! in pick_sort()
 			for (int a = 0; a < 8; a++)
 			{
-				copyArray(arrA, arrB, size[j]);
-				runSort(arrB, size[j], index++);
+				runSort(arrA, size[j], index++);
 			}
 			file << "-------------------" << endl;
+			delete[] arrA;
 		}
 		cout << endl;
 	}

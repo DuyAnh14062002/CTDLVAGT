@@ -24,7 +24,7 @@ void GenerateNearlySortedData(int a[], int n);
 void GenerateData(int a[], int n, int dataType);
 
 // SortingAlgorithm.cpp
-void selection_sort(int* arr, int n);
+void selectionSort(int* arr, int n);
 void heapRebuild(int index, int* arr, int n);
 void heapConstruct(int* arr, int n);
 void heapSort(int* arr, int n);
@@ -32,8 +32,8 @@ void merge(int a[], int left, int mid, int right);
 void mergeSort(int a[], int left, int right);
 void insertionSort(int a[], int n);
 void bubbleSort(int arr[], int n);
-int partition(int arr[], int low, int high);
-void quickSort(int arr[], int low, int high);
+int partition(int a[], int first, int last);
+void quickSort(int a[], int first, int last);
 void radixSort(int a[], int n);
 void shakerSort(int a[], int n);
 
@@ -48,13 +48,15 @@ void radix_sort_count(int a[], int n, long long int& count_cmp);
 void shaker_sort_count(int a[], int n, long long int& count_cmp);
 void merge_count(int a[], int left, int mid, int right, long long int& count_cmp);
 void merge_sort_count(int a[], int left, int right, long long int& count_cmp);
-int partition_count(int arr[], int low, int high, long long int& count_cmp);
-void quick_sort_count(int arr[], int low, int high, long long int& count_cmp);
+int partition_count(int a[], int first, int last, long long int& count_cmp);
+void quick_sort_count(int a[], int first, int last, long long int& count_cmp);
 
 // Source.cpp
-void pick_sort(int* arr, int size, long long int& count_cmp, int index);
+void pick_sort_count(int* arr, int size, long long int& count_cmp, int index);
+void pickSort(int* arr, int size, int index);
 void copyArray(int* arrA, int*& arrB, int size);
 void run_Selection(int* arr, int size);
 void run_Heap(int* arr, int size);
 void run_BubbleSort(int* arr, int size);
 void experiments();
+void swap1(int& a, int& b);

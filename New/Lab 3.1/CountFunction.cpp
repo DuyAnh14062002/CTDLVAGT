@@ -239,29 +239,33 @@ void merge_sort_count(int a[], int left, int right, long long int& count_cmp)
 	}
 }
 //
-int partition_count(int arr[], int low, int high, long long int& count_cmp)
-
+int partition_count(int a[], int first, int last, long long int& count_cmp)
 {
-	int pivot = arr[high];    // pivot
-	int left = low;
-	int right = high - 1;
-	while (++count_cmp && true) {
-		while (++count_cmp && left <= right && arr[left] < pivot) left++;
-		while (++count_cmp && right >= left && arr[right] > pivot) right--;
-		if (++count_cmp && left >= right) break;
-		swap(arr[left], arr[right]);
-		left++;
-		right--;
-	}
-	swap(arr[left], arr[high]);
-	return left;
-}
-void quick_sort_count(int arr[], int low, int high, long long int& count_cmp)
-{
-	if (++count_cmp && low < high)
+	int pivot = a[(first + last) / 2];
+	int i = first;
+	int j = last;
+	int tmp;
+	while (++count_cmp && i <= j)
 	{
-		int pi = partition_count(arr, low, high, count_cmp);
-		quick_sort_count(arr, low, pi - 1, count_cmp);
-		quick_sort_count(arr, pi + 1, high, count_cmp);
+		while (++count_cmp && a[i] < pivot)
+			i++;
+		while (++count_cmp && a[j] > pivot)
+			j--;
+		if (++count_cmp && i <= j) {
+			tmp = a[i];
+			a[i] = a[j];
+			a[j] = tmp;
+			i++;
+			j--;
+		}
 	}
+	return i;
+}
+void quick_sort_count(int a[], int first, int last, long long int& count_cmp)
+{
+	int index = partition_count(a, first, last, count_cmp);
+	if (++count_cmp && first < index - 1)
+		quick_sort_count(a, first, index - 1, count_cmp);
+	if (++count_cmp && index < last)
+		quick_sort_count(a, index, last, count_cmp);
 }

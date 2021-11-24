@@ -1,6 +1,6 @@
 #include "Header.h"
 
-void selection_sort(int* arr, int n)
+void selectionSort(int* arr, int n)
 {
 	// sap xep tang dan
 	int largeNumber, temp, index;
@@ -71,7 +71,7 @@ void heapSort(int* arr, int n)
 		int temp = arr[0]; // hoan doi vi tri cua phan tu lon nhat cua vung chua sap xep cho phan tu o truoc vung da duoc sap xep
 		arr[0] = arr[r];
 		arr[r] = temp;
-		heapRebuild(0, arr, r); // la cau truc heap nen khi thay doi phan tu dau tien thi chi thay 1 phan cua truc heap
+		heapRebuild(0, arr, r); // la cau truc heap nen khi thay doi phan tu dau tien thi chi thay doi 1 phan cua truc heap
 		r = r - 1;
 	}
 }
@@ -172,30 +172,35 @@ void bubbleSort(int arr[], int n)
 	}
 }
 //
-int partition(int arr[], int low, int high)
+int partition(int a[], int first, int last)
 {
-	int pivot = arr[high];    // pivot
-	int left = low;
-	int right = high - 1;
-	while (true) {
-		while (left <= right && arr[left] < pivot) left++;
-		while (right >= left && arr[right] > pivot) right--;
-		if (left >= right) break;
-		swap(arr[left], arr[right]);
-		left++;
-		right--;
-	}
-	swap(arr[left], arr[high]);
-	return left;
-}
-void quickSort(int arr[], int low, int high) //
-{
-	if (low < high)
+	int pivot = a[(first + last) / 2];
+	int i = first;
+	int j = last;
+	int tmp;
+	while (i <= j)
 	{
-		int pi = partition(arr, low, high);
-		quickSort(arr, low, pi - 1);
-		quickSort(arr, pi + 1, high);
+		while (a[i] < pivot)
+			i++;
+		while (a[j] > pivot)
+			j--;
+		if (i <= j) {
+			tmp = a[i];
+			a[i] = a[j];
+			a[j] = tmp;
+			i++;
+			j--;
+		}
 	}
+	return i;
+}
+void quickSort(int a[], int first, int last)
+{
+	int index = partition(a, first, last);
+	if (first < index - 1)
+		quickSort(a, first, index - 1);
+	if (index < last)
+		quickSort(a, index, last);
 }
 //
 void radixSort(int a[], int n)
