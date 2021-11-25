@@ -262,3 +262,54 @@ void shakerSort(int a[], int n)
 	}
 }
 //
+void MenuRunTime(int a[], int n, int sort)
+{
+	switch (sort)
+	{
+	case 0:	//Selection sort
+		cout << "Selection Sort: ";
+		selectionSort(a, n);
+		break;
+	case 1:	// Insertion Sort
+		cout << "Insertion Sort: ";
+		insertionSort(a, n);
+		break;
+	case 2:	// Megre sort
+		cout << "Merge Sort: ";
+		mergeSort(a, 0, n - 1);
+		break;
+	case 3:	// Heap Sort
+		cout << "Heap Sort: ";
+		heapSort(a, n);
+		break;
+	case 4:
+		cout << "Bubble Sort: ";
+		bubbleSort(a, n);
+		break;
+	case 5:
+		cout << "Quick Sort: ";
+		quickSort(a, 0, n);
+		break;
+	case 6:
+		cout << "Radix Sort: ";
+		radixSort(a, n);
+		break;
+	case 7:
+		cout << "Shanker Sort: ";
+		shakerSort(a, n);
+		break;
+	case 8:
+		cout << "Shell Sort: ";
+		break;
+	case 9:
+		cout << "Counting Sort: ";
+		
+		break;
+	case 10:
+		cout << "Flash Sort: ";
+
+		break;
+	default:
+		printf("Error: unknown data type!\n");
+	}
+}

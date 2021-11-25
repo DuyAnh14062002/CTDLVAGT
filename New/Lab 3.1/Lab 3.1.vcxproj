@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CommandLinecpp.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="GenerateData.cpp" />
     <ClCompile Include="SortingAlgorithm.cpp" />

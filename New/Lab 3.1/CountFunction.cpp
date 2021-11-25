@@ -269,3 +269,46 @@ void quick_sort_count(int a[], int first, int last, long long int& count_cmp)
 	if (++count_cmp && index < last)
 		quick_sort_count(a, index, last, count_cmp);
 }
+void MenuComparison(int a[], int n, int sort, long long& count_com)
+{
+	count_com = 0;
+	switch (sort)
+	{
+	case 0:	//Selection sort
+		cout << "Selection Sort: ";
+		selection_sort_count(a, n, count_com);
+		break;
+	case 1:	// Insertion Sort
+		cout << "Insertion Sort: ";
+		insertion_sort_count(a, n, count_com);
+		break;
+	case 2:	// Megre sort
+		cout << "Merge Sort: ";
+		merge_sort_count(a, 0, n - 1, count_com);
+		break;
+	case 3:	// Heap Sort
+		cout << "Heap Sort: ";
+		heap_sort_count(a, n, count_com);
+		break;
+	case 4:
+		cout << "Bubble Sort: ";
+		bubble_sort_count(a, n, count_com);
+		break;
+	case 5:
+		cout << "Quick Sort: ";
+		quick_sort_count(a, 0, n, count_com);
+		break;
+	case 6:
+		cout << "Radix Sort: ";
+		radix_sort_count(a, n, count_com);
+		break;
+	case 7:
+		break;
+	case 8:
+		break;
+	case 9: 
+		break;
+	default:
+		printf("Error: unknown data type!\n");
+	}
+}

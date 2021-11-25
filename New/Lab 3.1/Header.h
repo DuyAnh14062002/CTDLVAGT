@@ -36,6 +36,7 @@ int partition(int a[], int first, int last);
 void quickSort(int a[], int first, int last);
 void radixSort(int a[], int n);
 void shakerSort(int a[], int n);
+void MenuRunTime(int a[], int n, int sort);
 
 // CountFunction.cpp
 void selection_sort_count(int* arr, int n, long long int& count_cmp);
@@ -50,6 +51,7 @@ void merge_count(int a[], int left, int mid, int right, long long int& count_cmp
 void merge_sort_count(int a[], int left, int right, long long int& count_cmp);
 int partition_count(int a[], int first, int last, long long int& count_cmp);
 void quick_sort_count(int a[], int first, int last, long long int& count_cmp);
+void MenuComparison(int a[], int n, int sort, long long& count_com);
 
 // Source.cpp
 void pick_sort_count(int* arr, int size, long long int& count_cmp, int index);

@@ -25,3 +25,7 @@ ghi rõ các thay đổi
 +Thay đổi cách chạy đo thời gian sort và đếm comparion: tách 2
 quá trình thành 2 hàm chạy riêng. Khi chạy runSort vẫn chạy cả 2
 hàm này, tức là thời gian chạy sẽ tăng lên.
+
+
+// bá
+còn thiếu phần đọc file, ghi file của từng cmd trong phần writing file trong lab3
