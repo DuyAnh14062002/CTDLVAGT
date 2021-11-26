@@ -1,25 +1,24 @@
 ﻿#include "Header.h"
 
-// quick_sort_count() tạm thời tắt, cần điền input vào! 
 
 int main()
 {
-	fstream file;
-	file.open("chart.txt", ios::out);
+	//fstream file;
+	//file.open("chart.txt", ios::out);
 
-	auto start = high_resolution_clock::now();
-	experiments(); // thay doi i, j va dieu kien trong ham experiments de chon data type va data size
-	auto stop = high_resolution_clock::now();
-	auto duration = duration_cast<seconds>(stop - start);
+	//auto start = high_resolution_clock::now();
+	//experiments(); // thay doi i, j va dieu kien trong ham experiments de chon data type va data size
+	//auto stop = high_resolution_clock::now();
+	//auto duration = duration_cast<seconds>(stop - start);
 
-	cout << "total time taken: " << duration.count() << " seconds" << endl;
+	//cout << "total time taken: " << duration.count() << " seconds" << endl;
 
-	file.close();
-	// ghi tong thoi gian vao cuoi file
-	file.open("chart.txt", ios::app);
-	file.seekp(file.eof());
-	file << "total time taken: " << duration.count() << " seconds" << endl;
-	file.close();
+	//file.close();
+	//// ghi tong thoi gian vao cuoi file
+	//file.open("chart.txt", ios::app);
+	//file.seekp(file.eof());
+	//file << "total time taken: " << duration.count() << " seconds" << endl;
+	//file.close();
 
 
 	// test ham sorting nhanh
@@ -32,13 +31,18 @@ int main()
 	//	cout << arr[i] << " ";
 	//}
 
-	/*int n = 10000;
+	//int n = 100;
+	//int* arr = new int[n];
+	int n;
+	readSize(n);
 	int* arr = new int[n];
-	GenerateData(arr, n, 3);
-	bubbleSort(arr, n);
-	for (int i = 0; i < 10000; i++)
+	GenerateData(arr, n,2);
+	//readFileArray(arr,n);
+	mergeSort(arr, 0, n-1);
+	//writeFileArray(arr, n, 0);
+	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << " ";
-	}*/
+	}
 	return 0;
 }

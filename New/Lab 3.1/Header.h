@@ -36,29 +36,38 @@ int partition(int a[], int first, int last);
 void quickSort(int a[], int first, int last);
 void radixSort(int a[], int n);
 void shakerSort(int a[], int n);
-void MenuRunTime(int a[], int n, int sort);
+void shellSort(int a[], int n);
+void countingSort(int input[], int n);
+void flashSort(int a[], int n);
 
 // CountFunction.cpp
-void selection_sort_count(int* arr, int n, long long int& count_cmp);
-void heap_rebuild_count(int index, int* arr, int n, long long int& count_cmp);
-void heap_construct_count(int* arr, int n, long long int& count_cmp);
-void heap_sort_count(int* arr, int n, long long int& count_cmp);
-void bubble_sort_count(int arr[], int n, long long int& count_cmp);
-void insertion_sort_count(int a[], int n, long long int& count_cmp);
-void radix_sort_count(int a[], int n, long long int& count_cmp);
-void shaker_sort_count(int a[], int n, long long int& count_cmp);
-void merge_count(int a[], int left, int mid, int right, long long int& count_cmp);
-void merge_sort_count(int a[], int left, int right, long long int& count_cmp);
-int partition_count(int a[], int first, int last, long long int& count_cmp);
-void quick_sort_count(int a[], int first, int last, long long int& count_cmp);
-void MenuComparison(int a[], int n, int sort, long long& count_com);
+void selection_sort_count(int* arr, int n, unsigned long long& count_cmp);
+void heap_rebuild_count(int index, int* arr, int n, unsigned long long & count_cmp);
+void heap_construct_count(int* arr, int n, unsigned long long & count_cmp);
+void heap_sort_count(int* arr, int n, unsigned long long & count_cmp);
+void bubble_sort_count(int arr[], int n, unsigned long long & count_cmp);
+void insertion_sort_count(int a[], int n, unsigned long long & count_cmp);
+void radix_sort_count(int a[], int n, unsigned long long & count_cmp);
+void shaker_sort_count(int a[], int n, unsigned long long & count_cmp);
+void merge_count(int a[], int left, int mid, int right, unsigned long long & count_cmp);
+void merge_sort_count(int a[], int left, int right, unsigned long long & count_cmp);
+int partition_count(int a[], int first, int last, unsigned long long & count_cmp);
+void quick_sort_count(int a[], int first, int last, unsigned long long & count_cmp);
+void shell_sort_count(int a[], int n, unsigned long long& count_cmp);
+void counting_sort_count(int input[], int n, unsigned long long& count_cmp);
+void flash_sort_count(int a[], int n, unsigned long long& count_cmp);
+
+// CommandLinecpp.cpp
+void CommandLine(char* argc, char* argv[]);
 
 // Source.cpp
-void pick_sort_count(int* arr, int size, long long int& count_cmp, int index);
+void pick_sort_count(int* arr, int size, unsigned long long & count_cmp, int index);
 void pickSort(int* arr, int size, int index);
 void copyArray(int* arrA, int*& arrB, int size);
 void run_Selection(int* arr, int size);
 void run_Heap(int* arr, int size);
 void run_BubbleSort(int* arr, int size);
 void experiments();
-void swap1(int& a, int& b);
+void writeFileArray(int* arr, int size, int index);
+void readSize(int& size);
+void readFileArray(int *arr ,int& size);

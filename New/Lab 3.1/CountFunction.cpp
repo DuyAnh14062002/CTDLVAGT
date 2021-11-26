@@ -1,30 +1,37 @@
 #include "Header.h"
 
-void selection_sort_count(int* arr, int n, long long int& count_cmp)
+void selection_sort_count(int* arr, int n, unsigned long long& count_cmp)
 {
 	// sap xep tang dan
 	count_cmp = 0;
-	int largeNumber, temp, index;
-	for (int i = 0; ++count_cmp && i < n; i++)
+	int index;
+	bool checkAscending = true;
+	for (int i = 0;++count_cmp && i < n - 1; i++)
 	{
-		index = 0; // dat lai vi tri tai dau mang
-		largeNumber = arr[0];
-		count_cmp++;
-		for (int j = 1; ++count_cmp && j < n - i; j++)
+		if (++count_cmp && arr[i] > arr[i + 1])
 		{
-			if (++count_cmp && largeNumber < arr[j]) // tim phan tu lon nhat trong vi tri tu 0 den n - i
-			{
-				largeNumber = arr[j];
-				index = j;
-			}
+			checkAscending = false;
+			break;
 		}
-		temp = arr[n - 1 - i]; // hoan doi vi tri phan tu lon nhat vua tim duoc cho phan tu thu n - 1 - i
-		arr[n - 1 - i] = arr[index];
-		arr[index] = temp;
+	}
+	if (++count_cmp && checkAscending == false)
+	{
+		for (int i = 0;++count_cmp && i < n; i++)
+		{
+			index = 0;
+			for (int j = 1;++count_cmp && j < n - i; j++)
+			{
+				if (++count_cmp && arr[index] < arr[j])
+				{
+					index = j;
+				}
+			}
+			HoanVi(arr[index], arr[n - i - 1]);
+		}
 	}
 }
 //
-void heap_rebuild_count(int index, int* arr, int n, long long int& count_cmp)
+void heap_rebuild_count(int index, int* arr, int n, unsigned long long & count_cmp)
 {
 	// sap xep theo max-heap
 	bool isHeap = false;
@@ -52,7 +59,7 @@ void heap_rebuild_count(int index, int* arr, int n, long long int& count_cmp)
 		}
 	}
 }
-void heap_construct_count(int* arr, int n, long long int& count_cmp)
+void heap_construct_count(int* arr, int n, unsigned long long & count_cmp)
 {
 
 	int index = (n - 1) / 2;
@@ -62,7 +69,7 @@ void heap_construct_count(int* arr, int n, long long int& count_cmp)
 		index = index - 1;
 	}
 }
-void heap_sort_count(int* arr, int n, long long int& count_cmp)
+void heap_sort_count(int* arr, int n, unsigned long long & count_cmp)
 
 {
 	// tu slide
@@ -80,7 +87,7 @@ void heap_sort_count(int* arr, int n, long long int& count_cmp)
 	}
 }
 //
-void bubble_sort_count(int arr[], int n, long long int& count_cmp)
+void bubble_sort_count(int arr[], int n, unsigned long long & count_cmp)
 {
 	int i, j;
 	bool haveSwap = false;
@@ -89,7 +96,7 @@ void bubble_sort_count(int arr[], int n, long long int& count_cmp)
 		haveSwap = false;
 		for (j = 0; ++count_cmp && j < n - i - 1; j++) {
 			if (++count_cmp && arr[j] > arr[j + 1]) {
-				swap(arr[j], arr[j + 1]);
+				HoanVi(arr[j], arr[j + 1]);
 				haveSwap = true; //Check if this iteration has swap
 			}
 		}
@@ -100,24 +107,22 @@ void bubble_sort_count(int arr[], int n, long long int& count_cmp)
 	}
 }
 //
-void insertion_sort_count(int a[], int n, long long int& count_cmp)
-
+void insertion_sort_count(int a[], int n, unsigned long long & count_cmp)
 {
-	int i, key, j;
-	for (i = 1; ++count_cmp && i < n; i++)
+	for (int i = 1; ++count_cmp && i < n; i++)
 	{
-		key = a[i];
-		j = i - 1;
-		while (++count_cmp && j >= 0 && a[j] > key)
+		int k = i - 1;
+		int key = a[i];
+		while ((++count_cmp && a[k] > key) && (++count_cmp && k >= 0))
 		{
-			a[j + 1] = a[j];
-			j = j - 1;
+			a[k + 1] = a[k];
+			k--;
 		}
-		a[j + 1] = key;
+		a[k + 1] = key;
 	}
 }
 //
-void radix_sort_count(int a[], int n, long long int& count_cmp)
+void radix_sort_count(int a[], int n, unsigned long long & count_cmp)
 
 {
 	int* b = new int[n];
@@ -149,7 +154,7 @@ void radix_sort_count(int a[], int n, long long int& count_cmp)
 	}
 }
 //
-void shaker_sort_count(int a[], int n, long long int& count_cmp)
+void shaker_sort_count(int a[], int n, unsigned long long & count_cmp)
 
 {
 	int Left = 0;
@@ -178,7 +183,7 @@ void shaker_sort_count(int a[], int n, long long int& count_cmp)
 	}
 }
 //
-void merge_count(int a[], int left, int mid, int right, long long int& count_cmp)
+void merge_count(int a[], int left, int mid, int right, unsigned long long & count_cmp)
 
 {
 	int i, j, k;
@@ -226,7 +231,7 @@ void merge_count(int a[], int left, int mid, int right, long long int& count_cmp
 		k++;
 	}
 }
-void merge_sort_count(int a[], int left, int right, long long int& count_cmp)
+void merge_sort_count(int a[], int left, int right, unsigned long long & count_cmp)
 {
 	if (++count_cmp && left < right)
 	{
@@ -239,7 +244,7 @@ void merge_sort_count(int a[], int left, int right, long long int& count_cmp)
 	}
 }
 //
-int partition_count(int a[], int first, int last, long long int& count_cmp)
+int partition_count(int a[], int first, int last, unsigned long long & count_cmp)
 {
 	int pivot = a[(first + last) / 2];
 	int i = first;
@@ -261,7 +266,7 @@ int partition_count(int a[], int first, int last, long long int& count_cmp)
 	}
 	return i;
 }
-void quick_sort_count(int a[], int first, int last, long long int& count_cmp)
+void quick_sort_count(int a[], int first, int last, unsigned long long & count_cmp)
 {
 	int index = partition_count(a, first, last, count_cmp);
 	if (++count_cmp && first < index - 1)
@@ -269,46 +274,108 @@ void quick_sort_count(int a[], int first, int last, long long int& count_cmp)
 	if (++count_cmp && index < last)
 		quick_sort_count(a, index, last, count_cmp);
 }
-void MenuComparison(int a[], int n, int sort, long long& count_com)
+//
+void shell_sort_count(int a[], int n, unsigned long long& count_cmp)
 {
-	count_com = 0;
-	switch (sort)
+	count_cmp = 0;
+	for (int interval = n / 2; ++count_cmp && interval > 0; interval /= 2)
 	{
-	case 0:	//Selection sort
-		cout << "Selection Sort: ";
-		selection_sort_count(a, n, count_com);
-		break;
-	case 1:	// Insertion Sort
-		cout << "Insertion Sort: ";
-		insertion_sort_count(a, n, count_com);
-		break;
-	case 2:	// Megre sort
-		cout << "Merge Sort: ";
-		merge_sort_count(a, 0, n - 1, count_com);
-		break;
-	case 3:	// Heap Sort
-		cout << "Heap Sort: ";
-		heap_sort_count(a, n, count_com);
-		break;
-	case 4:
-		cout << "Bubble Sort: ";
-		bubble_sort_count(a, n, count_com);
-		break;
-	case 5:
-		cout << "Quick Sort: ";
-		quick_sort_count(a, 0, n, count_com);
-		break;
-	case 6:
-		cout << "Radix Sort: ";
-		radix_sort_count(a, n, count_com);
-		break;
-	case 7:
-		break;
-	case 8:
-		break;
-	case 9: 
-		break;
-	default:
-		printf("Error: unknown data type!\n");
+		for (int i = interval; ++count_cmp && i < n; i++)
+		{
+			int temp = a[i];
+			int j = i;
+			for (j = i; ++count_cmp && j >= interval && ++count_cmp && a[j - interval] > temp; j -= interval)
+				a[j] = a[j - interval];
+			a[j] = temp;
+		}
 	}
+}
+//
+void counting_sort_count(int input[], int n, unsigned long long& count_cmp)
+{
+	count_cmp = 0;
+	int* output = new int[n]; // The output will have sorted input array
+	int max = input[0];
+	int min = input[0];
+
+	for (int i = 1; ++count_cmp && i < n; i++)
+	{
+		if (++count_cmp && input[i] > max)
+			max = input[i]; // Maximum value in array
+		else if (++count_cmp && input[i] < min)
+			min = input[i]; // Minimum value in array
+	}
+	int k = max - min + 1; // Size of count array
+	int* count_array = new int[k]; // Create a count_array to store count of each individual input value
+	fill_n(count_array, k, 0); // Initialize count_array elements as zero
+	for (int i = 0; ++count_cmp && i < n; i++)
+		count_array[input[i] - min]++; // Store count of each individual input value
+	/* Change count_array so that count_array now contains actual
+	 position of input values in output array */
+	for (int i = 1; ++count_cmp && i < k; i++)
+		count_array[i] += count_array[i - 1];
+	// Populate output array using count_array and input array
+	for (int i = 0; ++count_cmp && i < n; i++)
+	{
+		output[count_array[input[i] - min] - 1] = input[i];
+		count_array[input[i] - min]--;
+	}
+	for (int i = 0; ++count_cmp && i < n; i++)
+	{
+		input[i] = output[i]; // Copy the output array to input, so that input now contains sorted value
+	}
+}
+//
+void flash_sort_count(int a[], int n, unsigned long long& count_cmp)
+{
+	count_cmp = 0;
+	int minVal = a[0];
+	int max = 0;
+	int m = int(0.45 * n);
+	int* l = new int[m];
+	for (int i = 0; ++count_cmp && i < m; i++)
+		l[i] = 0;
+	for (int i = 1; ++count_cmp && i < n; i++)
+	{
+		if (++count_cmp && a[i] < minVal)
+			minVal = a[i];
+		if (++count_cmp && a[i] > a[max])
+			max = i;
+	}
+	if (++count_cmp && a[max] == minVal)
+		return;
+	double c1 = (double)(m - 1) / (a[max] - minVal);
+	for (int i = 0; ++count_cmp && i < n; i++)
+	{
+		int k = int(c1 * (a[i] - minVal));
+		++l[k];
+	}
+	for (int i = 1; ++count_cmp && i < m; i++)
+		l[i] += l[i - 1];
+	HoanVi(a[max], a[0]);
+	int nmove = 0;
+	int j = 0;
+	int k = m - 1;
+	int t = 0;
+	int flash;
+	while (++count_cmp && nmove < n - 1)
+	{
+		while (++count_cmp && j > l[k] - 1)
+		{
+			j++;
+			k = int(c1 * (a[j] - minVal));
+		}
+		flash = a[j];
+		if (++count_cmp && k < 0) break;
+		while (++count_cmp && j != l[k])
+		{
+			k = int(c1 * (flash - minVal));
+			int hold = a[t = --l[k]];
+			a[t] = flash;
+			flash = hold;
+			++nmove;
+		}
+	}
+	delete[] l;
+	insertionSort(a, n);
 }

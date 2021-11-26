@@ -29,3 +29,8 @@ hàm này, tức là thời gian chạy sẽ tăng lên.
 
 // bá
 còn thiếu phần đọc file, ghi file của từng cmd trong phần writing file trong lab3
+
+-26/11/2021 (Phạm Phước Bình)
++Cập nhật thêm 3 hàm sort mới
++Bổ sung thêm hàm đọc va ghi file
++Điều chỉnh và bổ sung vào CommandLinecpp.cpp

@@ -1,0 +1,38 @@
+Mỗi command sẽ dùng hàm đọc và ghi file khác nhau:
+-Command 1: chạy hàm sort sử dụng data input cho trước
+ Data cho trước được ghi trong GivenInput.txt
+ Khi chạy xong xuất ra mảng đã được sort vào file output.txt
+
+-Command 2: chạy hàm sort với dữ liệu được tạo tự động, có kích
+ thước và cách sắp xếp phần tử nhập từ command
+ (các cách sắp xếp: sorted, nearly sorted...)
+ Trước khi sort, ghi dữ liệu được tạo tự động ra file input.txt
+ Khi chạy xong xuất ra mảng đã được sort vào file output.txt
+
+-Command 3: chạy hàm sort với dữ liệu được tạo tự động trên cả 4
+ cách sắp xếp phần tử, có kích thước được nhập từ command
+ (Không cần xuất ra file input.txt)
+ Khi chạy xong xuất ra mảng đã được sort với mỗi cách sắp xếp sẽ
+ có các file: 
+ 	"input_1.txt": random order data
+ 	"input_2.txt": nearly sorted data
+	"input_3.txt": sorted data
+	"input_4.txt": reversed data
+
+-Command 4: chạy 2 hàm sort để so sánh với data imput được cho
+ trước
+ Không cần ghi ra file
+
+-Command 5: chạy 2 hầm sort để so sánh với data được tạo tự động
+ Trước khi sort, ghi dữ liệu được tạo tự động ra file input.txt
+
+Hàm writeFileArray(int* arr, int size, int index)
+có index sẽ chọn tên file được tạo ra
+ 1: output.txt
+ 2: input.txt
+ 3: input_1.txt
+ 4: input_2.txt
+ 5: input_3.txt
+ 6: input_4.txt
+
+Chú ý trong Command 3 các index không được sắp xếp theo thứ tự

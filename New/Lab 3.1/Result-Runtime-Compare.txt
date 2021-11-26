@@ -1,0 +1,1105 @@
+Sorted data | size: 10000
+SELECTION SORT
+0 miliseconds (without count comparisons)
+20000 times
+
+HEAP SORT
+1 miliseconds (without count comparisons)
+519036 times
+
+BUBBLE SORT
+0 miliseconds (without count comparisons)
+20001 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+19999 times
+
+RADIX SORT
+1 miliseconds (without count comparisons)
+140058 times
+
+SHAKER SORT
+0 miliseconds (without count comparisons)
+20002 times
+
+MERGE SORT
+4 miliseconds (without count comparisons)
+406234 times
+
+QUICK SORT
+0 miliseconds (without count comparisons)
+193610 times
+
+SHELL SORT
+0 miliseconds (without count comparisons)
+360042 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+60002 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+86995 times
+
+-------------------
+Sorted data | size: 30000
+SELECTION SORT
+0 miliseconds (without count comparisons)
+60000 times
+
+HEAP SORT
+3 miliseconds (without count comparisons)
+1742717 times
+
+BUBBLE SORT
+0 miliseconds (without count comparisons)
+60001 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+59999 times
+
+RADIX SORT
+5 miliseconds (without count comparisons)
+510072 times
+
+SHAKER SORT
+0 miliseconds (without count comparisons)
+60002 times
+
+MERGE SORT
+12 miliseconds (without count comparisons)
+1332186 times
+
+QUICK SORT
+1 miliseconds (without count comparisons)
+627226 times
+
+SHELL SORT
+1 miliseconds (without count comparisons)
+1170050 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+180002 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+260995 times
+
+-------------------
+Sorted data | size: 50000
+SELECTION SORT
+0 miliseconds (without count comparisons)
+100000 times
+
+HEAP SORT
+5 miliseconds (without count comparisons)
+3060914 times
+
+BUBBLE SORT
+0 miliseconds (without count comparisons)
+100001 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+99999 times
+
+RADIX SORT
+9 miliseconds (without count comparisons)
+850072 times
+
+SHAKER SORT
+0 miliseconds (without count comparisons)
+100002 times
+
+MERGE SORT
+22 miliseconds (without count comparisons)
+2320874 times
+
+QUICK SORT
+2 miliseconds (without count comparisons)
+1084458 times
+
+SHELL SORT
+2 miliseconds (without count comparisons)
+2100049 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+300002 times
+
+FLASH SORT
+1 miliseconds (without count comparisons)
+434995 times
+
+-------------------
+Sorted data | size: 100000
+SELECTION SORT
+0 miliseconds (without count comparisons)
+200000 times
+
+HEAP SORT
+12 miliseconds (without count comparisons)
+6525399 times
+
+BUBBLE SORT
+0 miliseconds (without count comparisons)
+200001 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+199999 times
+
+RADIX SORT
+18 miliseconds (without count comparisons)
+1700072 times
+
+SHAKER SORT
+0 miliseconds (without count comparisons)
+200002 times
+
+MERGE SORT
+44 miliseconds (without count comparisons)
+4891754 times
+
+QUICK SORT
+4 miliseconds (without count comparisons)
+2268922 times
+
+SHELL SORT
+4 miliseconds (without count comparisons)
+4500051 times
+
+COUNTING SORT
+1 miliseconds (without count comparisons)
+600002 times
+
+FLASH SORT
+2 miliseconds (without count comparisons)
+869995 times
+
+-------------------
+Sorted data | size: 300000
+SELECTION SORT
+0 miliseconds (without count comparisons)
+600000 times
+
+HEAP SORT
+39 miliseconds (without count comparisons)
+21461203 times
+
+BUBBLE SORT
+0 miliseconds (without count comparisons)
+600001 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+599999 times
+
+RADIX SORT
+68 miliseconds (without count comparisons)
+6000086 times
+
+SHAKER SORT
+0 miliseconds (without count comparisons)
+600002 times
+
+MERGE SORT
+134 miliseconds (without count comparisons)
+15848682 times
+
+QUICK SORT
+12 miliseconds (without count comparisons)
+7275706 times
+
+SHELL SORT
+13 miliseconds (without count comparisons)
+15300061 times
+
+COUNTING SORT
+3 miliseconds (without count comparisons)
+1800002 times
+
+FLASH SORT
+6 miliseconds (without count comparisons)
+2609995 times
+
+-------------------
+Sorted data | size: 500000
+SELECTION SORT
+0 miliseconds (without count comparisons)
+1000000 times
+
+HEAP SORT
+71 miliseconds (without count comparisons)
+37183363 times
+
+BUBBLE SORT
+0 miliseconds (without count comparisons)
+1000001 times
+
+INSERTION SORT
+1 miliseconds (without count comparisons)
+999999 times
+
+RADIX SORT
+116 miliseconds (without count comparisons)
+10000086 times
+
+SHAKER SORT
+0 miliseconds (without count comparisons)
+1000002 times
+
+MERGE SORT
+226 miliseconds (without count comparisons)
+27234634 times
+
+QUICK SORT
+22 miliseconds (without count comparisons)
+12475706 times
+
+SHELL SORT
+22 miliseconds (without count comparisons)
+25500058 times
+
+COUNTING SORT
+10 miliseconds (without count comparisons)
+3000002 times
+
+FLASH SORT
+11 miliseconds (without count comparisons)
+4349995 times
+
+-------------------
+Nearly sorted data | size: 10000
+SELECTION SORT
+72 miliseconds (without count comparisons)
+100010566 times
+
+HEAP SORT
+1 miliseconds (without count comparisons)
+519000 times
+
+BUBBLE SORT
+65 miliseconds (without count comparisons)
+98995857 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+149547 times
+
+RADIX SORT
+1 miliseconds (without count comparisons)
+140058 times
+
+SHAKER SORT
+0 miliseconds (without count comparisons)
+173840 times
+
+MERGE SORT
+4 miliseconds (without count comparisons)
+421887 times
+
+QUICK SORT
+0 miliseconds (without count comparisons)
+193642 times
+
+SHELL SORT
+0 miliseconds (without count comparisons)
+409175 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+69570 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+86975 times
+
+-------------------
+Nearly sorted data | size: 30000
+SELECTION SORT
+626 miliseconds (without count comparisons)
+900030160 times
+
+HEAP SORT
+3 miliseconds (without count comparisons)
+1742644 times
+
+BUBBLE SORT
+597 miliseconds (without count comparisons)
+898291101 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+541179 times
+
+RADIX SORT
+5 miliseconds (without count comparisons)
+510072 times
+
+SHAKER SORT
+3 miliseconds (without count comparisons)
+630959 times
+
+MERGE SORT
+13 miliseconds (without count comparisons)
+1375024 times
+
+QUICK SORT
+1 miliseconds (without count comparisons)
+627262 times
+
+SHELL SORT
+1 miliseconds (without count comparisons)
+1327984 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+208672 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+260975 times
+
+-------------------
+Nearly sorted data | size: 50000
+SELECTION SORT
+1714 miliseconds (without count comparisons)
+2500050030 times
+
+HEAP SORT
+5 miliseconds (without count comparisons)
+3060869 times
+
+BUBBLE SORT
+1211 miliseconds (without count comparisons)
+1824359976 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+398791 times
+
+RADIX SORT
+9 miliseconds (without count comparisons)
+850072 times
+
+SHAKER SORT
+1 miliseconds (without count comparisons)
+544649 times
+
+MERGE SORT
+22 miliseconds (without count comparisons)
+2372653 times
+
+QUICK SORT
+1 miliseconds (without count comparisons)
+1084482 times
+
+SHELL SORT
+3 miliseconds (without count comparisons)
+2245869 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+331071 times
+
+FLASH SORT
+1 miliseconds (without count comparisons)
+434963 times
+
+-------------------
+Nearly sorted data | size: 100000
+SELECTION SORT
+7068 miliseconds (without count comparisons)
+10000108522 times
+
+HEAP SORT
+12 miliseconds (without count comparisons)
+6525359 times
+
+BUBBLE SORT
+2793 miliseconds (without count comparisons)
+4175610240 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+629599 times
+
+RADIX SORT
+19 miliseconds (without count comparisons)
+1700072 times
+
+SHAKER SORT
+3 miliseconds (without count comparisons)
+674807 times
+
+MERGE SORT
+44 miliseconds (without count comparisons)
+4943541 times
+
+QUICK SORT
+4 miliseconds (without count comparisons)
+2268958 times
+
+SHELL SORT
+4 miliseconds (without count comparisons)
+4680349 times
+
+COUNTING SORT
+1 miliseconds (without count comparisons)
+626767 times
+
+FLASH SORT
+1 miliseconds (without count comparisons)
+869979 times
+
+-------------------
+Nearly sorted data | size: 300000
+SELECTION SORT
+69490 miliseconds (without count comparisons)
+90000301094 times
+
+HEAP SORT
+39 miliseconds (without count comparisons)
+21461340 times
+
+BUBBLE SORT
+10238 miliseconds (without count comparisons)
+13804174632 times
+
+INSERTION SORT
+0 miliseconds (without count comparisons)
+1121055 times
+
+RADIX SORT
+69 miliseconds (without count comparisons)
+6000086 times
+
+SHAKER SORT
+4 miliseconds (without count comparisons)
+1155448 times
+
+MERGE SORT
+138 miliseconds (without count comparisons)
+15896640 times
+
+QUICK SORT
+12 miliseconds (without count comparisons)
+7275750 times
+
+SHELL SORT
+12 miliseconds (without count comparisons)
+15462263 times
+
+COUNTING SORT
+4 miliseconds (without count comparisons)
+1830204 times
+
+FLASH SORT
+6 miliseconds (without count comparisons)
+2609971 times
+
+-------------------
+Nearly sorted data | size: 500000
+SELECTION SORT
+189823 miliseconds (without count comparisons)
+250000502976 times
+
+HEAP SORT
+71 miliseconds (without count comparisons)
+37183492 times
+
+BUBBLE SORT
+14649 miliseconds (without count comparisons)
+19919609777 times
+
+INSERTION SORT
+1 miliseconds (without count comparisons)
+1372815 times
+
+RADIX SORT
+117 miliseconds (without count comparisons)
+10000086 times
+
+SHAKER SORT
+2 miliseconds (without count comparisons)
+1441996 times
+
+MERGE SORT
+224 miliseconds (without count comparisons)
+27293418 times
+
+QUICK SORT
+20 miliseconds (without count comparisons)
+12475730 times
+
+SHELL SORT
+24 miliseconds (without count comparisons)
+25648003 times
+
+COUNTING SORT
+8 miliseconds (without count comparisons)
+3031056 times
+
+FLASH SORT
+12 miliseconds (without count comparisons)
+4349979 times
+
+-------------------
+Reserve sorted data | size: 10000
+SELECTION SORT
+76 miliseconds (without count comparisons)
+100010004 times
+
+HEAP SORT
+1 miliseconds (without count comparisons)
+483402 times
+
+BUBBLE SORT
+675 miliseconds (without count comparisons)
+100019998 times
+
+INSERTION SORT
+80 miliseconds (without count comparisons)
+100009999 times
+
+RADIX SORT
+1 miliseconds (without count comparisons)
+140058 times
+
+SHAKER SORT
+637 miliseconds (without count comparisons)
+100005001 times
+
+MERGE SORT
+5 miliseconds (without count comparisons)
+401834 times
+
+QUICK SORT
+0 miliseconds (without count comparisons)
+203607 times
+
+SHELL SORT
+0 miliseconds (without count comparisons)
+475175 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+70001 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+73001 times
+
+-------------------
+Reserve sorted data | size: 30000
+SELECTION SORT
+642 miliseconds (without count comparisons)
+900030004 times
+
+HEAP SORT
+3 miliseconds (without count comparisons)
+1641469 times
+
+BUBBLE SORT
+6120 miliseconds (without count comparisons)
+900059998 times
+
+INSERTION SORT
+723 miliseconds (without count comparisons)
+900029999 times
+
+RADIX SORT
+5 miliseconds (without count comparisons)
+510072 times
+
+SHAKER SORT
+5809 miliseconds (without count comparisons)
+900015001 times
+
+MERGE SORT
+12 miliseconds (without count comparisons)
+1323962 times
+
+QUICK SORT
+1 miliseconds (without count comparisons)
+657223 times
+
+SHELL SORT
+1 miliseconds (without count comparisons)
+1554051 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+210001 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+219001 times
+
+-------------------
+Reserve sorted data | size: 50000
+SELECTION SORT
+1757 miliseconds (without count comparisons)
+2500050004 times
+
+HEAP SORT
+6 miliseconds (without count comparisons)
+2882199 times
+
+BUBBLE SORT
+17039 miliseconds (without count comparisons)
+2500099998 times
+
+INSERTION SORT
+2020 miliseconds (without count comparisons)
+2500049999 times
+
+RADIX SORT
+9 miliseconds (without count comparisons)
+850072 times
+
+SHAKER SORT
+16150 miliseconds (without count comparisons)
+2500025001 times
+
+MERGE SORT
+24 miliseconds (without count comparisons)
+2301434 times
+
+QUICK SORT
+2 miliseconds (without count comparisons)
+1134455 times
+
+SHELL SORT
+2 miliseconds (without count comparisons)
+2844628 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+350001 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+365001 times
+
+-------------------
+Reserve sorted data | size: 100000
+SELECTION SORT
+7072 miliseconds (without count comparisons)
+10000100004 times
+
+HEAP SORT
+12 miliseconds (without count comparisons)
+6153394 times
+
+BUBBLE SORT
+68331 miliseconds (without count comparisons)
+10000199998 times
+
+INSERTION SORT
+8058 miliseconds (without count comparisons)
+10000099999 times
+
+RADIX SORT
+18 miliseconds (without count comparisons)
+1700072 times
+
+SHAKER SORT
+64451 miliseconds (without count comparisons)
+10000050001 times
+
+MERGE SORT
+51 miliseconds (without count comparisons)
+4852874 times
+
+QUICK SORT
+3 miliseconds (without count comparisons)
+2368919 times
+
+SHELL SORT
+5 miliseconds (without count comparisons)
+6089190 times
+
+COUNTING SORT
+1 miliseconds (without count comparisons)
+700001 times
+
+FLASH SORT
+1 miliseconds (without count comparisons)
+730001 times
+
+-------------------
+Reserve sorted data | size: 300000
+SELECTION SORT
+67563 miliseconds (without count comparisons)
+90000300004 times
+
+HEAP SORT
+40 miliseconds (without count comparisons)
+20381638 times
+
+BUBBLE SORT
+615395 miliseconds (without count comparisons)
+90000599998 times
+
+INSERTION SORT
+76324 miliseconds (without count comparisons)
+90000299999 times
+
+RADIX SORT
+69 miliseconds (without count comparisons)
+6000086 times
+
+SHAKER SORT
+578394 miliseconds (without count comparisons)
+90000150001 times
+
+MERGE SORT
+136 miliseconds (without count comparisons)
+15729866 times
+
+QUICK SORT
+12 miliseconds (without count comparisons)
+7575703 times
+
+SHELL SORT
+18 miliseconds (without count comparisons)
+20001852 times
+
+COUNTING SORT
+4 miliseconds (without count comparisons)
+2100001 times
+
+FLASH SORT
+5 miliseconds (without count comparisons)
+2190001 times
+
+-------------------
+Reserve sorted data | size: 500000
+SELECTION SORT
+187923 miliseconds (without count comparisons)
+250000500004 times
+
+HEAP SORT
+69 miliseconds (without count comparisons)
+35456561 times
+
+BUBBLE SORT
+1645891 miliseconds (without count comparisons)
+250000999998 times
+
+INSERTION SORT
+237274 miliseconds (without count comparisons)
+250000499999 times
+
+RADIX SORT
+111 miliseconds (without count comparisons)
+10000086 times
+
+SHAKER SORT
+1544135 miliseconds (without count comparisons)
+250000250001 times
+
+MERGE SORT
+209 miliseconds (without count comparisons)
+27143914 times
+
+QUICK SORT
+20 miliseconds (without count comparisons)
+12975703 times
+
+SHELL SORT
+31 miliseconds (without count comparisons)
+33857581 times
+
+COUNTING SORT
+6 miliseconds (without count comparisons)
+3500001 times
+
+FLASH SORT
+9 miliseconds (without count comparisons)
+3650001 times
+
+-------------------
+Randomized data | size: 10000
+SELECTION SORT
+65 miliseconds (without count comparisons)
+100010008 times
+
+HEAP SORT
+1 miliseconds (without count comparisons)
+500576 times
+
+BUBBLE SORT
+438 miliseconds (without count comparisons)
+99986877 times
+
+INSERTION SORT
+39 miliseconds (without count comparisons)
+49884355 times
+
+RADIX SORT
+1 miliseconds (without count comparisons)
+140058 times
+
+SHAKER SORT
+378 miliseconds (without count comparisons)
+66694368 times
+
+MERGE SORT
+4 miliseconds (without count comparisons)
+457755 times
+
+QUICK SORT
+0 miliseconds (without count comparisons)
+291760 times
+
+SHELL SORT
+1 miliseconds (without count comparisons)
+649858 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+69990 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+59570 times
+
+-------------------
+Randomized data | size: 30000
+SELECTION SORT
+579 miliseconds (without count comparisons)
+900030012 times
+
+HEAP SORT
+4 miliseconds (without count comparisons)
+1691582 times
+
+BUBBLE SORT
+4123 miliseconds (without count comparisons)
+900050200 times
+
+INSERTION SORT
+345 miliseconds (without count comparisons)
+447590503 times
+
+RADIX SORT
+6 miliseconds (without count comparisons)
+510072 times
+
+SHAKER SORT
+3384 miliseconds (without count comparisons)
+596693847 times
+
+MERGE SORT
+13 miliseconds (without count comparisons)
+1513120 times
+
+QUICK SORT
+3 miliseconds (without count comparisons)
+948300 times
+
+SHELL SORT
+4 miliseconds (without count comparisons)
+2260009 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+209990 times
+
+FLASH SORT
+0 miliseconds (without count comparisons)
+187021 times
+
+-------------------
+Randomized data | size: 50000
+SELECTION SORT
+1594 miliseconds (without count comparisons)
+2500050006 times
+
+HEAP SORT
+7 miliseconds (without count comparisons)
+2969568 times
+
+BUBBLE SORT
+11664 miliseconds (without count comparisons)
+2500037000 times
+
+INSERTION SORT
+962 miliseconds (without count comparisons)
+1250151399 times
+
+RADIX SORT
+8 miliseconds (without count comparisons)
+850072 times
+
+SHAKER SORT
+9600 miliseconds (without count comparisons)
+1667941443 times
+
+MERGE SORT
+22 miliseconds (without count comparisons)
+2637336 times
+
+QUICK SORT
+5 miliseconds (without count comparisons)
+1607794 times
+
+SHELL SORT
+9 miliseconds (without count comparisons)
+4525939 times
+
+COUNTING SORT
+0 miliseconds (without count comparisons)
+332760 times
+
+FLASH SORT
+1 miliseconds (without count comparisons)
+299134 times
+
+-------------------
+Randomized data | size: 100000
+SELECTION SORT
+6381 miliseconds (without count comparisons)
+10000100008 times
+
+HEAP SORT
+16 miliseconds (without count comparisons)
+6338938 times
+
+BUBBLE SORT
+46937 miliseconds (without count comparisons)
+9999976272 times
+
+INSERTION SORT
+3829 miliseconds (without count comparisons)
+4985285805 times
+
+RADIX SORT
+18 miliseconds (without count comparisons)
+1700072 times
+
+SHAKER SORT
+38122 miliseconds (without count comparisons)
+6652875310 times
+
+MERGE SORT
+47 miliseconds (without count comparisons)
+5574131 times
+
+QUICK SORT
+9 miliseconds (without count comparisons)
+3562287 times
+
+SHELL SORT
+17 miliseconds (without count comparisons)
+9920332 times
+
+COUNTING SORT
+1 miliseconds (without count comparisons)
+632761 times
+
+FLASH SORT
+2 miliseconds (without count comparisons)
+600953 times
+
+-------------------
+Randomized data | size: 300000
+SELECTION SORT
+72404 miliseconds (without count comparisons)
+90000300006 times
+
+HEAP SORT
+56 miliseconds (without count comparisons)
+20902195 times
+
+BUBBLE SORT
+424796 miliseconds (without count comparisons)
+89997807760 times
+
+INSERTION SORT
+36799 miliseconds (without count comparisons)
+45090251517 times
+
+RADIX SORT
+53 miliseconds (without count comparisons)
+5100072 times
+
+SHAKER SORT
+343856 miliseconds (without count comparisons)
+60102091975 times
+
+MERGE SORT
+149 miliseconds (without count comparisons)
+18136065 times
+
+QUICK SORT
+31 miliseconds (without count comparisons)
+11287811 times
+
+SHELL SORT
+57 miliseconds (without count comparisons)
+33074843 times
+
+COUNTING SORT
+3 miliseconds (without count comparisons)
+1832760 times
+
+FLASH SORT
+10 miliseconds (without count comparisons)
+2013346 times
+
+-------------------
+Randomized data | size: 500000
+SELECTION SORT
+165764 miliseconds (without count comparisons)
+250000500008 times
+
+HEAP SORT
+98 miliseconds (without count comparisons)
+36294768 times
+
+BUBBLE SORT
+1178886 miliseconds (without count comparisons)
+249997702145 times
+
+INSERTION SORT
+114450 miliseconds (without count comparisons)
+124937331385 times
+
+RADIX SORT
+89 miliseconds (without count comparisons)
+8500072 times
+
+SHAKER SORT
+953798 miliseconds (without count comparisons)
+166650193522 times
+
+MERGE SORT
+246 miliseconds (without count comparisons)
+31288843 times
+
+QUICK SORT
+55 miliseconds (without count comparisons)
+19444784 times
+
+SHELL SORT
+103 miliseconds (without count comparisons)
+63519070 times
+
+COUNTING SORT
+6 miliseconds (without count comparisons)
+3032756 times
+
+FLASH SORT
+24 miliseconds (without count comparisons)
+3160723 times
+
+-------------------
+total time taken: 22747 seconds

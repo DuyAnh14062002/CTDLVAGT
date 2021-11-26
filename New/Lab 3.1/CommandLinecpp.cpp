@@ -6,6 +6,7 @@
 // chưa in các thông tin đầu vào của từng cmd
 // chưa việt hàm ghi file output cmd 2
 //
+
 void CommandLine(char* argc, char* argv[])
 {
 	clock_t start, end;
@@ -13,9 +14,9 @@ void CommandLine(char* argc, char* argv[])
 
 	string order[] = { "-rand", "-nsorted", "-sorted", "rev" };
 	//string mode[] = { "-a", "-c" };
-	string sort[] = { "selection-sort", "insertion-sort","merge-sort", "heap-sort", "bubble-sort", "quick-sort", "radix-sort", "shaker-sort", "shell-sort", "counting-sort", "flash-sort" };
+	string sort[] = { "selection-sort", "heap-sort","bubble-sort", "insertion-sort", "radix-sort", "shaker-sort", "merge-sort", "quick-sort", "shell-sort", "counting-sort", "flash-sort" };
 	string parameters[] = { "-time", "-comp", "-both" };
-	string DataSize[] = { "10000", "50000", "100000", "300000", "500000" };
+	string DataSize[] = { "10000", "30000", "50000", "100000", "300000", "500000"};
 	int n = atoi(argc);
 
 	if (n > 6 && n < 5)
@@ -77,10 +78,11 @@ void CommandLine(char* argc, char* argv[])
 							int* a = new int[inputsize];
 							GenerateData(a, inputsize, i);
 							start = clock();
-							MenuRunTime(a, inputsize, index);
+							pickSort(a, inputsize, index);
 							end = clock();
 							double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 							cout << time << endl;
+							writeFileArray(a, inputsize, i + 2);
 							delete a;
 						}
 						break;
@@ -91,9 +93,10 @@ void CommandLine(char* argc, char* argv[])
 							cout << order[i] << ":    ";
 							int* a = new int[inputsize];
 							GenerateData(a, inputsize, i);
-							long long count_com = 0;
-							MenuComparison(a, inputsize, index, count_com);
+							unsigned long long count_com = 0;
+							pick_sort_count(a, inputsize, count_com, index);
 							cout << count_com << endl;
+							writeFileArray(a, inputsize, i + 2);
 							delete a;
 						}
 						break;
@@ -108,14 +111,15 @@ void CommandLine(char* argc, char* argv[])
 							copyArray(a, b, inputsize);
 							//Runtime
 							start = clock();
-							MenuRunTime(a, inputsize, index);
+							pickSort(a, inputsize, index);
 							end = clock();
 							double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 							cout << time << "  |   ";
 							// Comparison
-							long long count_com = 0;
-							MenuComparison(a, inputsize, index, count_com);
+							unsigned long long count_com = 0;
+							pick_sort_count(a, inputsize, count_com, index);
 							cout << count_com << endl;
+							writeFileArray(a, inputsize, i + 2);
 							delete a, b;
 						}
 						break;
@@ -129,6 +133,7 @@ void CommandLine(char* argc, char* argv[])
 
 					// hàm đọc file
 					int inputsize = 0;
+					readSize(inputsize);
 					string dataorder;
 					int indexorder = -1;
 					//
@@ -156,50 +161,60 @@ void CommandLine(char* argc, char* argv[])
 					switch (par)
 					{
 					case 0:
+					{
 						// Run time
 						cout << "Running time(if required): ";
 						int* a = new int[inputsize];
-						GenerateData(a, inputsize, indexorder);
+						readFileArray(a, inputsize);
 						start = clock();
-						MenuRunTime(a, inputsize, index);
+						pickSort(a, inputsize, index);
 						end = clock();
 						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 						cout << time << endl;
+						writeFileArray(a, inputsize, 0);
 						delete a;
 						break;
+					}
 					case 1:
+					{
 						//comparison
 						cout << "Comparsisions (if required): ";
 						int* a = new int[inputsize];
-						GenerateData(a, inputsize, indexorder);
-						long long count_com = 0;
-						MenuComparison(a, inputsize, index, count_com);
+						readFileArray(a, inputsize);
+						unsigned long long count_com = 0;
+						pick_sort_count(a, inputsize, count_com, index);
 						cout << count_com << endl;
+						writeFileArray(a, inputsize, 0);
 						delete a;
 						break;
+					}
 					case 2:
-
+					{
 						// Runtime and comparison
 						cout << "Running time(if required): ";
 						int* a = new int[inputsize];
 						int* b = new int[inputsize];
-						GenerateData(a, inputsize, indexorder);
+						readFileArray(a, inputsize);
 						copyArray(a, b, inputsize);
 						//Runtime
 						start = clock();
-						MenuRunTime(a, inputsize, index);
+						pickSort(a, inputsize, index);
 						end = clock();
 						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 						cout << time << endl;
 						// Comparison
 						cout << "Comparsisions (if required): ";
-						long long count_com = 0;
-						MenuComparison(a, inputsize, index, count_com);
+						unsigned long long count_com = 0;
+						pick_sort_count(a, inputsize, count_com, index);
 						cout << count_com << endl;
+						writeFileArray(a, inputsize, 0);
 						delete a, b;
 						break;
+					}
 					default:
+					{
 						break;
+					}
 					}
 				}
 
@@ -212,6 +227,7 @@ void CommandLine(char* argc, char* argv[])
 				//
 				// hàm đọc file
 				int datasize = 0;
+				readSize(datasize);
 				//
 				//
 
@@ -246,21 +262,21 @@ void CommandLine(char* argc, char* argv[])
 					cout << "--------error-----" << endl;
 
 				int* a = new int[datasize];
-				GenerateData(a, datasize, modedata);
+				readFileArray(a, datasize);
 				int* b = new int[datasize];
 				// runtime
 				cout << "Running Time:   ";
 				//alg1
 				copyArray(a, b, datasize);
 				start = clock();
-				MenuRunTime(b, n, index_alg1);
+				pickSort(b, n, index_alg1);
 				end = clock();
 				double time1 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 				cout << time1 << "  |   ";
 				//alg2
 				copyArray(a, b, datasize);
 				start = clock();
-				MenuRunTime(b, n, index_alg1);
+				pickSort(b, n, index_alg1);
 				end = clock();
 				double time2 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 				cout << time2 << endl;
@@ -269,13 +285,13 @@ void CommandLine(char* argc, char* argv[])
 				cout << "Comparisons:   ";
 				//alg1
 				copyArray(a, b, datasize);
-				long long count_com = 0;
-				MenuComparison(b, datasize, index_alg1, count_com);
+				unsigned long long count_com = 0;
+				pick_sort_count(b, datasize, count_com, index_alg1);
 				cout << count_com << "    |     ";
 				// alg2
 				copyArray(a, b, datasize);
 				count_com = 0;
-				MenuComparison(b, datasize, index_alg2, count_com);
+				pick_sort_count(b, datasize, count_com, index_alg2);
 				cout << count_com << endl;
 			}
 		}
@@ -348,11 +364,13 @@ void CommandLine(char* argc, char* argv[])
 						cout << order[i] << ":    ";
 						int* a = new int[inputsize];
 						GenerateData(a, inputsize, i);
+						writeFileArray(a, inputsize, 1);
 						start = clock();
-						MenuRunTime(a, inputsize, index);
+						pickSort(a, inputsize, index);
 						end = clock();
 						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 						cout << time << endl;
+
 						delete a;
 					}
 					break;
@@ -363,8 +381,9 @@ void CommandLine(char* argc, char* argv[])
 						cout << order[i] << ":    ";
 						int* a = new int[inputsize];
 						GenerateData(a, inputsize, i);
-						long long count_com = 0;
-						MenuComparison(a, inputsize, index, count_com);
+						writeFileArray(a, inputsize, 1);
+						unsigned long long count_com = 0;
+						pick_sort_count(a, inputsize, count_com, index);
 						cout << count_com << endl;
 						delete a;
 					}
@@ -377,16 +396,17 @@ void CommandLine(char* argc, char* argv[])
 						int* a = new int[inputsize];
 						int* b = new int[inputsize];
 						GenerateData(a, inputsize, i);
+						writeFileArray(a, inputsize, 1);
 						copyArray(a, b, inputsize);
 						//Runtime
 						start = clock();
-						MenuRunTime(a, inputsize, index);
+						pickSort(a, inputsize, index);
 						end = clock();
 						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 						cout << time << "  |   ";
 						// Comparison
-						long long count_com = 0;
-						MenuComparison(a, inputsize, index, count_com);
+						unsigned long long count_com = 0;
+						pick_sort_count(a, inputsize, count_com, index);
 						cout << count_com << endl;
 						delete a, b;
 					}
@@ -429,6 +449,7 @@ void CommandLine(char* argc, char* argv[])
 
 				int* a = new int[datasize];
 				GenerateData(a, datasize, modedata);
+				writeFileArray(a, datasize, 1);
 				int* b = new int[datasize];
 				// runtime
 				cout << "Running Time:   ";
@@ -436,7 +457,7 @@ void CommandLine(char* argc, char* argv[])
 				//alg1
 				copyArray(a, b, datasize);
 				start = clock();
-				MenuRunTime(b, n, index_alg1);
+				pickSort(b, n, index_alg1);
 				end = clock();
 				double time1 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 				cout << time1 << "  |   ";
@@ -444,7 +465,7 @@ void CommandLine(char* argc, char* argv[])
 				//alg2
 				copyArray(a, b, datasize);
 				start = clock();
-				MenuRunTime(b, n, index_alg1);
+				pickSort(b, n, index_alg1);
 				end = clock();
 				double time2 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 				cout << time2 << endl;
@@ -455,14 +476,14 @@ void CommandLine(char* argc, char* argv[])
 
 				//alg1
 				copyArray(a, b, datasize);
-				long long count_com = 0;
-				MenuComparison(b, datasize, index_alg1, count_com);
+				unsigned long long count_com = 0;
+				pick_sort_count(b, datasize, count_com, index_alg1);
 				cout << count_com << "    |     ";
 
 				// alg2
 				copyArray(a, b, datasize);
 				count_com = 0;
-				MenuComparison(b, datasize, index_alg2, count_com);
+				pick_sort_count(b, datasize, count_com, index_alg2);
 				cout << count_com << endl;
 			}
 		}

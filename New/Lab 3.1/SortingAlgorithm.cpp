@@ -1,24 +1,32 @@
-#include "Header.h"
+﻿#include "Header.h"
 
 void selectionSort(int* arr, int n)
 {
 	// sap xep tang dan
-	int largeNumber, temp, index;
-	for (int i = 0; i < n; i++)
+	int index;
+	bool checkAscending = true;
+	for (int i = 0; i < n - 1; i++)
 	{
-		index = 0; // dat lai vi tri tai dau mang
-		largeNumber = arr[0];
-		for (int j = 1; j < n - i; j++)
+		if (arr[i] > arr[i + 1])
 		{
-			if (largeNumber < arr[j]) // tim phan tu lon nhat trong vi tri tu 0 den n - i
-			{
-				largeNumber = arr[j];
-				index = j;
-			}
+			checkAscending = false; // Kiểm tra mảng có thứ tự tăng dần hay không
+			break;
 		}
-		temp = arr[n - 1 - i]; // hoan doi vi tri phan tu lon nhat vua tim duoc cho phan tu thu n - 1 - i
-		arr[n - 1 - i] = arr[index];
-		arr[index] = temp;
+	}
+	if (checkAscending == false)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			index = 0; // Xét tại vị trí đầu tiên
+			for (int j = 1; j < n - i; j++)
+			{
+				if (arr[index] < arr[j])
+				{
+					index = j; // Tìm giá trị lớn nhất trong khoảng từ 0 đến n - i
+				}
+			}
+			HoanVi(arr[index], arr[n - i - 1]); // Hoán đổi giá trị lớn nhất vừa tìm được cho phần tử đứng trước vùng đã sắp xếp
+		}
 	}
 }
 //
@@ -138,17 +146,16 @@ void mergeSort(int a[], int left, int right) // left: nho nhat, right: lon nhat,
 //
 void insertionSort(int a[], int n)
 {
-	int i, key, j;
-	for (i = 1; i < n; i++)
+	for (int i = 1; i < n; i++)
 	{
-		key = a[i];
-		j = i - 1;
-		while (j >= 0 && a[j] > key)
+		int k = i - 1;
+		int key = a[i];
+		while (a[k] > key && k >= 0)
 		{
-			a[j + 1] = a[j];
-			j = j - 1;
+			a[k + 1] = a[k];
+			k--;
 		}
-		a[j + 1] = key;
+		a[k + 1] = key;
 	}
 }
 //
@@ -161,7 +168,7 @@ void bubbleSort(int arr[], int n)
 		haveSwap = false;
 		for (j = 0; j < n - i - 1; j++) {
 			if (arr[j] > arr[j + 1]) {
-				swap(arr[j], arr[j + 1]);
+				HoanVi(arr[j], arr[j + 1]);
 				haveSwap = true; //Check if this iteration has swap
 			}
 		}
@@ -262,54 +269,104 @@ void shakerSort(int a[], int n)
 	}
 }
 //
-void MenuRunTime(int a[], int n, int sort)
+void shellSort(int a[], int n)
 {
-	switch (sort)
+	for (int interval = n / 2; interval > 0; interval /= 2)
 	{
-	case 0:	//Selection sort
-		cout << "Selection Sort: ";
-		selectionSort(a, n);
-		break;
-	case 1:	// Insertion Sort
-		cout << "Insertion Sort: ";
-		insertionSort(a, n);
-		break;
-	case 2:	// Megre sort
-		cout << "Merge Sort: ";
-		mergeSort(a, 0, n - 1);
-		break;
-	case 3:	// Heap Sort
-		cout << "Heap Sort: ";
-		heapSort(a, n);
-		break;
-	case 4:
-		cout << "Bubble Sort: ";
-		bubbleSort(a, n);
-		break;
-	case 5:
-		cout << "Quick Sort: ";
-		quickSort(a, 0, n);
-		break;
-	case 6:
-		cout << "Radix Sort: ";
-		radixSort(a, n);
-		break;
-	case 7:
-		cout << "Shanker Sort: ";
-		shakerSort(a, n);
-		break;
-	case 8:
-		cout << "Shell Sort: ";
-		break;
-	case 9:
-		cout << "Counting Sort: ";
-		
-		break;
-	case 10:
-		cout << "Flash Sort: ";
-
-		break;
-	default:
-		printf("Error: unknown data type!\n");
+		for (int i = interval; i < n; i++)
+		{
+			int temp = a[i];
+			int j = i;
+			for (j = i; j >= interval && a[j - interval] > temp; j -= interval)
+				a[j] = a[j - interval];
+			a[j] = temp;
+		}
 	}
+}
+//
+void countingSort(int input[], int n)
+{
+	int* output = new int[n]; // The output will have sorted input array
+	int max = input[0];
+	int min = input[0];
+
+	for (int i = 1; i < n; i++)
+	{
+		if (input[i] > max)
+			max = input[i]; // Maximum value in array
+		else if (input[i] < min)
+			min = input[i]; // Minimum value in array
+	}
+	int k = max - min + 1; // Size of count array
+	int* count_array = new int[k]; // Create a count_array to store count of each individual input value
+	fill_n(count_array, k, 0); // Initialize count_array elements as zero
+	for (int i = 0; i < n; i++)
+		count_array[input[i] - min]++; // Store count of each individual input value
+	/* Change count_array so that count_array now contains actual
+	 position of input values in output array */
+	for (int i = 1; i < k; i++)
+		count_array[i] += count_array[i - 1];
+	// Populate output array using count_array and input array
+	for (int i = 0; i < n; i++)
+	{
+		output[count_array[input[i] - min] - 1] = input[i];
+		count_array[input[i] - min]--;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		input[i] = output[i]; // Copy the output array to input, so that input now contains sorted value
+	}
+}
+//
+void flashSort(int a[], int n)
+{
+	int minVal = a[0];
+	int max = 0;
+	int m = int(0.45 * n);
+	int* l = new int[m];
+	for (int i = 0; i < m; i++)
+		l[i] = 0;
+	for (int i = 1; i < n; i++)
+	{
+		if (a[i] < minVal)
+			minVal = a[i];
+		if (a[i] > a[max])
+			max = i;
+	}
+	if (a[max] == minVal)
+		return;
+	double c1 = (double)(m - 1) / (a[max] - minVal);
+	for (int i = 0; i < n; i++)
+	{
+		int k = int(c1 * (a[i] - minVal));
+		++l[k];
+	}
+	for (int i = 1; i < m; i++)
+		l[i] += l[i - 1];
+	HoanVi(a[max], a[0]);
+	int nmove = 0;
+	int j = 0;
+	int k = m - 1;
+	int t = 0;
+	int flash;
+	while (nmove < n - 1)
+	{
+		while (j > l[k] - 1)
+		{
+			j++;
+			k = int(c1 * (a[j] - minVal));
+		}
+		flash = a[j];
+		if (k < 0) break;
+		while (j != l[k])
+		{
+			k = int(c1 * (flash - minVal));
+			int hold = a[t = --l[k]];
+			a[t] = flash;
+			flash = hold;
+			++nmove;
+		}
+	}
+	delete[] l;
+	insertionSort(a, n);
 }
