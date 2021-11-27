@@ -1,8 +1,10 @@
 ﻿#include "Header.h"
+using namespace std;
 
-
-int main()
+int main(int argc, const char* argv[])
 {
+	CommandLine(argc, argv);
+	return 0;
 	//fstream file;
 	//file.open("chart.txt", ios::out);
 
@@ -23,7 +25,6 @@ int main()
 
 	// test ham sorting nhanh
 	//int arr[10] = { 4,8,5,0,2,7,11,9,3,10 };
-	//int n = 10, count_cmp = 0;
 	//// *insert sorting algorithm here to test* 
 	//quickSort(arr, 0, 9);
 	//for (int i = 0; i < n; i++)
@@ -33,16 +34,16 @@ int main()
 
 	//int n = 100;
 	//int* arr = new int[n];
-	int n;
-	readSize(n);
-	int* arr = new int[n];
-	GenerateData(arr, n,2);
-	//readFileArray(arr,n);
-	mergeSort(arr, 0, n-1);
-	//writeFileArray(arr, n, 0);
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << " ";
-	}
-	return 0;
+	//int n;
+	//readSize(n);
+	//int* arr = new int[n];
+	//GenerateData(arr, n,2);
+	////readFileArray(arr,n);
+	//mergeSort(arr, 0, n-1);
+	////writeFileArray(arr, n, 0);
+	//for (int i = 0; i < n; i++)
+	//{
+	//	cout << arr[i] << " ";
+	//}
+	//return 0;
 }
