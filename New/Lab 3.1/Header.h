@@ -58,7 +58,7 @@ void counting_sort_count(int input[], int n, unsigned long long& count_cmp);
 void flash_sort_count(int a[], int n, unsigned long long& count_cmp);
 
 // CommandLinecpp.cpp
-void CommandLine(char* argc, char* argv[]);
+void CommandLine(int argc, const char* argv[]);
 
 // Source.cpp
 void pick_sort_count(int* arr, int size, unsigned long long & count_cmp, int index);

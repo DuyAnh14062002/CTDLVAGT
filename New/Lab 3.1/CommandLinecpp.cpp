@@ -7,17 +7,19 @@
 // chưa việt hàm ghi file output cmd 2
 //
 
-void CommandLine(char* argc, char* argv[])
+void CommandLine(int argc, const char* argv[])
 {
 	clock_t start, end;
 	unsigned long long count_com = 0;
 
-	string order[] = { "-rand", "-nsorted", "-sorted", "rev" };
+	string order[] = { "-rand", "-nsorted", "-sorted", "-rev" };
 	//string mode[] = { "-a", "-c" };
 	string sort[] = { "selection-sort", "heap-sort","bubble-sort", "insertion-sort", "radix-sort", "shaker-sort", "merge-sort", "quick-sort", "shell-sort", "counting-sort", "flash-sort" };
 	string parameters[] = { "-time", "-comp", "-both" };
 	string DataSize[] = { "10000", "30000", "50000", "100000", "300000", "500000"};
-	int n = atoi(argc);
+	int n = argc;
+
+	cout << n << endl;
 
 	if (n > 6 && n < 5)
 	{
@@ -57,6 +59,7 @@ void CommandLine(char* argc, char* argv[])
 				if (check == true)
 				{
 					//cmd 3
+					cout << "Command 3" << endl;
 					int inputsize = atoi(argv[3]);
 					int index = -1; // vị trí của sort trong string
 					for (int i = 0; i < 11; i++)
@@ -68,13 +71,21 @@ void CommandLine(char* argc, char* argv[])
 						}
 					}
 					//
+
+					cout << "AlGORITHM MODE : " << mode << endl;
+					cout << "Algorithm : " << alg << endl;
+					cout << "Input size : " << input <<"\n \n \n"<< endl;
+					//
+
 					switch (par)
 					{
 					case 0:
 						// Run time
 						for (int i = 0; i < 4; i++)
 						{
-							cout << order[i] << ":    ";
+							cout << "--------------------------------" << endl;
+							cout << order[i] << endl;
+							cout << "Running Time(if required):   ";
 							int* a = new int[inputsize];
 							GenerateData(a, inputsize, i);
 							start = clock();
@@ -90,7 +101,9 @@ void CommandLine(char* argc, char* argv[])
 						//comparison
 						for (int i = 0; i < 4; i++)
 						{
-							cout << order[i] << ":    ";
+							cout << "--------------------------------" << endl;
+							cout << order[i] << endl;
+							cout << "Running Time(if required):   ";
 							int* a = new int[inputsize];
 							GenerateData(a, inputsize, i);
 							unsigned long long count_com = 0;
@@ -104,7 +117,9 @@ void CommandLine(char* argc, char* argv[])
 						// Runtime and comparison
 						for (int i = 0; i < 4; i++)
 						{
-							cout << order[i] << ":    ";
+							cout << "--------------------------------" << endl;
+							cout << order[i] << endl;
+							cout << "Running Time(if required):   ";
 							int* a = new int[inputsize];
 							int* b = new int[inputsize];
 							GenerateData(a, inputsize, i);
@@ -116,6 +131,7 @@ void CommandLine(char* argc, char* argv[])
 							double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 							cout << time << "  |   ";
 							// Comparison
+							cout << "Comparsisions (if required):   ";
 							unsigned long long count_com = 0;
 							pick_sort_count(a, inputsize, count_com, index);
 							cout << count_com << endl;
@@ -130,7 +146,7 @@ void CommandLine(char* argc, char* argv[])
 				else
 				{
 					//cmd 1
-
+					cout << "command 1" << endl;
 					// hàm đọc file
 					int inputsize = 0;
 					readSize(inputsize);
@@ -157,6 +173,14 @@ void CommandLine(char* argc, char* argv[])
 							break;
 						}
 					}
+
+					//
+					cout << "AlGORITHM MODE : " << argv[1] << endl;
+					cout << "Algorithm : " << argv[2] << endl;
+					cout << "input file: " << argv[3] << endl;
+					cout << "Input size : " << inputsize << endl;
+					//
+
 
 					switch (par)
 					{
@@ -222,6 +246,7 @@ void CommandLine(char* argc, char* argv[])
 			if (mode == "-c")
 			{
 				//cmd 4
+				cout << "Command 4" << endl;
 				string alg2 = input, alg1(argv[2]), inputfile(argv[4]);
 
 				//
@@ -260,6 +285,13 @@ void CommandLine(char* argc, char* argv[])
 				}
 				else
 					cout << "--------error-----" << endl;
+
+				//
+				cout << "AlGORITHM MODE : " << argv[1] << endl;
+				cout << "Algorithm : " << alg1 << "   |    " << alg2 << endl;
+				cout << "Input file : " << argv[4] << endl;
+				cout << "Input size : " << datasize << endl;
+				//
 
 				int* a = new int[datasize];
 				readFileArray(a, datasize);
@@ -354,63 +386,76 @@ void CommandLine(char* argc, char* argv[])
 					}
 				}
 
+				//
+				cout << "AlGORITHM MODE : " << argv[1] << endl;
+				cout << "Algorithm : " << argv[2] << endl;
+				cout << "Input size : " << argv[3] << endl;
+				cout << "Input Order : " << argv[4] << endl;
+
+				//
 				//CMD 2
+				cout << "Command 2" << endl;
 				switch (par)
 				{
 				case 0:
+				{
 					// Run time
-					for (int i = 0; i < 4; i++)
-					{
-						cout << order[i] << ":    ";
-						int* a = new int[inputsize];
-						GenerateData(a, inputsize, i);
-						writeFileArray(a, inputsize, 1);
-						start = clock();
-						pickSort(a, inputsize, index);
-						end = clock();
-						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-						cout << time << endl;
+					cout << "--------------------------------" << endl;
+					cout << order << endl;
+					cout << "Running Time(if required):   ";
+					int* a = new int[inputsize];
+					GenerateData(a, inputsize, modedata);
+					writeFileArray(a, inputsize, 1);
+					start = clock();
+					pickSort(a, inputsize, index);
+					end = clock();
+					double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
+					cout << time << endl;
 
-						delete a;
-					}
+					delete a;
 					break;
+				}
 				case 1:
+				{
 					//comparison
-					for (int i = 0; i < 4; i++)
-					{
-						cout << order[i] << ":    ";
-						int* a = new int[inputsize];
-						GenerateData(a, inputsize, i);
-						writeFileArray(a, inputsize, 1);
-						unsigned long long count_com = 0;
-						pick_sort_count(a, inputsize, count_com, index);
-						cout << count_com << endl;
-						delete a;
-					}
+					cout << "--------------------------------" << endl;
+					cout << order << endl;
+					cout << "Comparisions (if required):   ";
+					int* a = new int[inputsize];
+					GenerateData(a, inputsize, modedata);
+					writeFileArray(a, inputsize, 1);
+					unsigned long long count_com = 0;
+					pick_sort_count(a, inputsize, count_com, index);
+					cout << count_com << endl;
+					delete a;
+
 					break;
+				}
 				case 2:
+				{
 					// Runtime and comparison
-					for (int i = 0; i < 4; i++)
-					{
-						cout << order[i] << ":    ";
-						int* a = new int[inputsize];
-						int* b = new int[inputsize];
-						GenerateData(a, inputsize, i);
-						writeFileArray(a, inputsize, 1);
-						copyArray(a, b, inputsize);
-						//Runtime
-						start = clock();
-						pickSort(a, inputsize, index);
-						end = clock();
-						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-						cout << time << "  |   ";
-						// Comparison
-						unsigned long long count_com = 0;
-						pick_sort_count(a, inputsize, count_com, index);
-						cout << count_com << endl;
-						delete a, b;
-					}
+					cout << "--------------------------------" << endl;
+					cout << order << endl;
+					cout << "Running Time(if required):   ";
+					int* a = new int[inputsize];
+					int* b = new int[inputsize];
+					GenerateData(a, inputsize, modedata);
+					writeFileArray(a, inputsize, 1);
+					copyArray(a, b, inputsize);
+					//Runtime
+					start = clock();
+					pickSort(a, inputsize, index);
+					end = clock();
+					double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
+					cout << time << "  |   ";
+					// Comparison
+					cout << "Comparisions (if required):   ";
+					unsigned long long count_com = 0;
+					pick_sort_count(a, inputsize, count_com, index);
+					cout << count_com << endl;
+					delete a, b;
 					break;
+				}
 				default:
 					break;
 				}
@@ -418,6 +463,8 @@ void CommandLine(char* argc, char* argv[])
 			if (mode == "-c")
 			{
 				//cmd5
+				cout << "Command 5" << endl;
+
 				int modedata = -1, datasize = atoi(argv[4]);
 				string alg1(argv[2]), alg2(argv[3]);
 				int index_alg1 = -1, index_alg2 = -1;
@@ -446,6 +493,14 @@ void CommandLine(char* argc, char* argv[])
 				}
 				else
 					cout << "--------error-----" << endl;
+
+				//
+				cout << "AlGORITHM MODE : " << argv[1] << endl;
+				cout << "Algorithm : " << argv[2] << "   |    " << argv[3] << endl;
+				cout << "Input size : " << argv[4] << endl;
+				cout << "Input Order : " << argv[5] << endl;
+
+				//
 
 				int* a = new int[datasize];
 				GenerateData(a, datasize, modedata);
