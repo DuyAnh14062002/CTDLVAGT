@@ -69,5 +69,5 @@ void run_Heap(int* arr, int size);
 void run_BubbleSort(int* arr, int size);
 void experiments();
 void writeFileArray(int* arr, int size, int index);
-void readSize(int& size);
-void readFileArray(int *arr ,int& size);
+void readSize(int& size, string GivenInput);
+void readFileArray(int* arr, int& size, string GivenInput);

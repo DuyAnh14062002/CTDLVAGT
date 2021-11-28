@@ -12,14 +12,13 @@ void CommandLine(int argc, const char* argv[])
 	clock_t start, end;
 	unsigned long long count_com = 0;
 
-	string order[] = { "-rand", "-nsorted", "-sorted", "-rev" };
+	string order[] = { "-sorted", "-nsorted", "-rev", "-rand" };
 	//string mode[] = { "-a", "-c" };
 	string sort[] = { "selection-sort", "heap-sort","bubble-sort", "insertion-sort", "radix-sort", "shaker-sort", "merge-sort", "quick-sort", "shell-sort", "counting-sort", "flash-sort" };
 	string parameters[] = { "-time", "-comp", "-both" };
 	string DataSize[] = { "10000", "30000", "50000", "100000", "300000", "500000"};
 	int n = argc;
 
-	cout << n << endl;
 
 	if (n > 6 && n < 5)
 	{
@@ -59,7 +58,6 @@ void CommandLine(int argc, const char* argv[])
 				if (check == true)
 				{
 					//cmd 3
-					cout << "Command 3" << endl;
 					int inputsize = atoi(argv[3]);
 					int index = -1; // vị trí của sort trong string
 					for (int i = 0; i < 11; i++)
@@ -88,12 +86,12 @@ void CommandLine(int argc, const char* argv[])
 							cout << "Running Time(if required):   ";
 							int* a = new int[inputsize];
 							GenerateData(a, inputsize, i);
+							writeFileArray(a, inputsize, i + 2);
 							start = clock();
 							pickSort(a, inputsize, index);
 							end = clock();
 							double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-							cout << time << endl;
-							writeFileArray(a, inputsize, i + 2);
+							cout << time << " ( ms )" << endl;
 							delete a;
 						}
 						break;
@@ -103,13 +101,14 @@ void CommandLine(int argc, const char* argv[])
 						{
 							cout << "--------------------------------" << endl;
 							cout << order[i] << endl;
-							cout << "Running Time(if required):   ";
+							cout << "Comparisions (if required):  ";
 							int* a = new int[inputsize];
 							GenerateData(a, inputsize, i);
+							writeFileArray(a, inputsize, i + 2);
 							unsigned long long count_com = 0;
 							pick_sort_count(a, inputsize, count_com, index);
 							cout << count_com << endl;
-							writeFileArray(a, inputsize, i + 2);
+							
 							delete a;
 						}
 						break;
@@ -123,19 +122,20 @@ void CommandLine(int argc, const char* argv[])
 							int* a = new int[inputsize];
 							int* b = new int[inputsize];
 							GenerateData(a, inputsize, i);
+							writeFileArray(a, inputsize, i + 2);
 							copyArray(a, b, inputsize);
 							//Runtime
 							start = clock();
 							pickSort(a, inputsize, index);
 							end = clock();
 							double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-							cout << time << "  |   ";
+							cout << time << " ( ms )" <<endl;
 							// Comparison
 							cout << "Comparsisions (if required):   ";
 							unsigned long long count_com = 0;
 							pick_sort_count(a, inputsize, count_com, index);
 							cout << count_com << endl;
-							writeFileArray(a, inputsize, i + 2);
+							
 							delete a, b;
 						}
 						break;
@@ -146,10 +146,9 @@ void CommandLine(int argc, const char* argv[])
 				else
 				{
 					//cmd 1
-					cout << "command 1" << endl;
 					// hàm đọc file
 					int inputsize = 0;
-					readSize(inputsize);
+					readSize(inputsize, input);
 					string dataorder;
 					int indexorder = -1;
 					//
@@ -179,6 +178,7 @@ void CommandLine(int argc, const char* argv[])
 					cout << "Algorithm : " << argv[2] << endl;
 					cout << "input file: " << argv[3] << endl;
 					cout << "Input size : " << inputsize << endl;
+					cout << "\n-----------------------\n" << endl;
 					//
 
 
@@ -189,12 +189,12 @@ void CommandLine(int argc, const char* argv[])
 						// Run time
 						cout << "Running time(if required): ";
 						int* a = new int[inputsize];
-						readFileArray(a, inputsize);
+						readFileArray(a, inputsize, input);
 						start = clock();
 						pickSort(a, inputsize, index);
 						end = clock();
 						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-						cout << time << endl;
+						cout << time << "  (ms)" << endl;
 						writeFileArray(a, inputsize, 0);
 						delete a;
 						break;
@@ -204,7 +204,7 @@ void CommandLine(int argc, const char* argv[])
 						//comparison
 						cout << "Comparsisions (if required): ";
 						int* a = new int[inputsize];
-						readFileArray(a, inputsize);
+						readFileArray(a, inputsize, input);
 						unsigned long long count_com = 0;
 						pick_sort_count(a, inputsize, count_com, index);
 						cout << count_com << endl;
@@ -218,14 +218,14 @@ void CommandLine(int argc, const char* argv[])
 						cout << "Running time(if required): ";
 						int* a = new int[inputsize];
 						int* b = new int[inputsize];
-						readFileArray(a, inputsize);
+						readFileArray(a, inputsize, input);
 						copyArray(a, b, inputsize);
 						//Runtime
 						start = clock();
 						pickSort(a, inputsize, index);
 						end = clock();
 						double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-						cout << time << endl;
+						cout << time << "  (ms)" << endl;
 						// Comparison
 						cout << "Comparsisions (if required): ";
 						unsigned long long count_com = 0;
@@ -246,13 +246,13 @@ void CommandLine(int argc, const char* argv[])
 			if (mode == "-c")
 			{
 				//cmd 4
-				cout << "Command 4" << endl;
 				string alg2 = input, alg1(argv[2]), inputfile(argv[4]);
 
 				//
 				// hàm đọc file
 				int datasize = 0;
-				readSize(datasize);
+				readSize(datasize, inputfile);
+				cout << " read file success" << endl;
 				//
 				//
 
@@ -265,53 +265,35 @@ void CommandLine(int argc, const char* argv[])
 					if (alg1 == sort[i]) index_alg1 = i;
 					if (alg2 == sort[i]) index_alg2 = i;
 				}
-				// xác định order
-				string order(argv[5]);
-				if (order == "-rand")
-				{
-					modedata = 0;
-				}
-				else if (order == "-nsorted")
-				{
-					modedata = 3;
-				}
-				else if (order == "-sorted")
-				{
-					modedata = 1;
-				}
-				else if (order == "-rev")
-				{
-					modedata = 2;
-				}
-				else
-					cout << "--------error-----" << endl;
+					
 
 				//
 				cout << "AlGORITHM MODE : " << argv[1] << endl;
 				cout << "Algorithm : " << alg1 << "   |    " << alg2 << endl;
 				cout << "Input file : " << argv[4] << endl;
 				cout << "Input size : " << datasize << endl;
+				cout << "\n-----------------------\n" << endl;
 				//
 
 				int* a = new int[datasize];
-				readFileArray(a, datasize);
+				readFileArray(a, datasize, inputfile);
 				int* b = new int[datasize];
 				// runtime
 				cout << "Running Time:   ";
 				//alg1
 				copyArray(a, b, datasize);
 				start = clock();
-				pickSort(b, n, index_alg1);
+				pickSort(b, datasize, index_alg1);
 				end = clock();
 				double time1 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
 				cout << time1 << "  |   ";
 				//alg2
 				copyArray(a, b, datasize);
 				start = clock();
-				pickSort(b, n, index_alg1);
+				pickSort(b, datasize, index_alg2);
 				end = clock();
 				double time2 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-				cout << time2 << endl;
+				cout << time2 << "  (ms)" << endl;
 
 				// Comparison
 				cout << "Comparisons:   ";
@@ -338,15 +320,15 @@ void CommandLine(int argc, const char* argv[])
 				string order(argv[4]);
 				if (order == "-rand")
 				{
-					modedata = 0;
+					modedata = 3;
 				}
 				else if (order == "-nsorted")
 				{
-					modedata = 3;
+					modedata = 1;
 				}
 				else if (order == "-sorted")
 				{
-					modedata = 1;
+					modedata = 0;
 				}
 				else if (order == "-rev")
 				{
@@ -370,7 +352,10 @@ void CommandLine(int argc, const char* argv[])
 					par = 2;
 				}
 				else
-					cout << "---------error---------" << endl;
+				{
+					cout << "--------error-----" << endl;
+					return;
+				}
 				// xác định datasize
 				int inputsize = atoi(argv[3]);
 
@@ -391,10 +376,9 @@ void CommandLine(int argc, const char* argv[])
 				cout << "Algorithm : " << argv[2] << endl;
 				cout << "Input size : " << argv[3] << endl;
 				cout << "Input Order : " << argv[4] << endl;
-
+				cout << endl;
 				//
 				//CMD 2
-				cout << "Command 2" << endl;
 				switch (par)
 				{
 				case 0:
@@ -410,8 +394,8 @@ void CommandLine(int argc, const char* argv[])
 					pickSort(a, inputsize, index);
 					end = clock();
 					double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-					cout << time << endl;
-
+					cout << time << " ( ms )" << endl;
+					writeFileArray(a, inputsize, 0);
 					delete a;
 					break;
 				}
@@ -427,6 +411,7 @@ void CommandLine(int argc, const char* argv[])
 					unsigned long long count_com = 0;
 					pick_sort_count(a, inputsize, count_com, index);
 					cout << count_com << endl;
+					writeFileArray(a, inputsize, 0);
 					delete a;
 
 					break;
@@ -444,15 +429,17 @@ void CommandLine(int argc, const char* argv[])
 					copyArray(a, b, inputsize);
 					//Runtime
 					start = clock();
-					pickSort(a, inputsize, index);
+					pickSort(b, inputsize, index);
 					end = clock();
 					double time = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-					cout << time << "  |   ";
+					cout << time << " ( ms )" << endl;
 					// Comparison
 					cout << "Comparisions (if required):   ";
 					unsigned long long count_com = 0;
-					pick_sort_count(a, inputsize, count_com, index);
+					copyArray(a, b, inputsize);
+					pick_sort_count(b, inputsize, count_com, index);
 					cout << count_com << endl;
+					writeFileArray(b, inputsize, 0);
 					delete a, b;
 					break;
 				}
@@ -477,28 +464,32 @@ void CommandLine(int argc, const char* argv[])
 				string order(argv[5]);
 				if (order == "-rand")
 				{
-					modedata = 0;
+					modedata = 3;
 				}
 				else if (order == "-nsorted")
 				{
-					modedata = 3;
+					modedata = 1;
 				}
 				else if (order == "-sorted")
 				{
-					modedata = 1;
+					modedata = 0;
 				}
 				else if (order == "-rev")
 				{
 					modedata = 2;
 				}
 				else
+				{
 					cout << "--------error-----" << endl;
+					return;
+				}
 
 				//
 				cout << "AlGORITHM MODE : " << argv[1] << endl;
 				cout << "Algorithm : " << argv[2] << "   |    " << argv[3] << endl;
 				cout << "Input size : " << argv[4] << endl;
 				cout << "Input Order : " << argv[5] << endl;
+				cout << "\n ---------------------------- \n" << endl;
 
 				//
 
@@ -506,24 +497,26 @@ void CommandLine(int argc, const char* argv[])
 				GenerateData(a, datasize, modedata);
 				writeFileArray(a, datasize, 1);
 				int* b = new int[datasize];
+
+				clock_t st1, end1, st2, end2;
 				// runtime
 				cout << "Running Time:   ";
 
 				//alg1
 				copyArray(a, b, datasize);
-				start = clock();
-				pickSort(b, n, index_alg1);
-				end = clock();
-				double time1 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
+				st1 = clock();
+				pickSort(b, datasize, index_alg1);
+				end1 = clock();
+				double time1 = ((double(end1 - st1)) * 1000) / CLOCKS_PER_SEC;
 				cout << time1 << "  |   ";
 
 				//alg2
 				copyArray(a, b, datasize);
-				start = clock();
-				pickSort(b, n, index_alg1);
-				end = clock();
-				double time2 = ((double(end - start)) * 1000) / CLOCKS_PER_SEC;
-				cout << time2 << endl;
+				st2 = clock();
+				pickSort(b, datasize, index_alg2);
+				end2 = clock();
+				double time2 = ((double(end2 - st2)) * 1000) / CLOCKS_PER_SEC;
+				cout << time2 << "    (ms) " << endl;
 
 				
 				// Comparison

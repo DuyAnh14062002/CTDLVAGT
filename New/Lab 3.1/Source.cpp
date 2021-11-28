@@ -317,10 +317,10 @@ void writeFileArray(int* arr, int size, int index)
 	}
 	file.close();
 }
-void readSize(int& size)
+void readSize(int& size, string GivenInput)
 {
 	fstream file;
-	file.open("GivenInput.txt", ios::in);
+	file.open(GivenInput, ios::in);
 	if (!file.is_open())
 	{
 		cout << "Khong mo duoc file!\n";
@@ -332,7 +332,7 @@ void readSize(int& size)
 	}
 	file.close();
 }
-void readFileArray(int* arr, int& size)
+void readFileArray(int* arr, int& size, string GivenInput)
 {
 	/*
 	 Hướng dẫn dùng
@@ -342,7 +342,7 @@ void readFileArray(int* arr, int& size)
 	 gọi hàm readFileArray(arr,n)
 	*/
 	fstream file;
-	file.open("GivenInput.txt", ios::in);
+	file.open(GivenInput, ios::in);
 	if (!file.is_open())
 	{
 		cout << "Khong mo duoc file!\n";
